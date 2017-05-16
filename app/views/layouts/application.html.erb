@@ -8,7 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
+  <%= video_tag "reel.mp4", autoplay: :autoplay, loop: true, mute: :mute, class: "video" %>
   <body>
     <%= yield %>
   </body>

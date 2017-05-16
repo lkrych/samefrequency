@@ -13,9 +13,7 @@ const Greeting = ({ session, logout }) => {
   } else {
     greeting = (
       <section>
-        <Link to="/signup">Sign Up</Link>
-        <br />
-        <Link to="/login">Log In</Link>
+        
       </section>
     );
   }
