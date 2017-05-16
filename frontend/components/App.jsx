@@ -9,6 +9,7 @@ const App = () => (
   <div className ="container">
     <header>
       <h1>Same Frequency</h1>
+      <h2>Social Radio</h2>
       <GreetingContainer />
     </header>
     <AuthRoute path="/login" component={SessionFormContainer} />
