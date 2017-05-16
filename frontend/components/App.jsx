@@ -12,8 +12,8 @@ const App = () => (
       <h2>Social Radio</h2>
       <GreetingContainer />
     </header>
-    <AuthRoute path="/login" component={SessionFormContainer} />
-    <AuthRoute path="/signup" component={SessionFormContainer} />
+    <AuthRoute path="/" component={SessionFormContainer} />
+    
   </div>
 );
 
