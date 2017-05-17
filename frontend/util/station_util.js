@@ -1,9 +1,10 @@
 const fetchRadioStations = () => (
   $.ajax({
     method: 'GET',
-    url: `http://api.shoutcast.com/legacy/Top500?k=${SHOUTCAST_KEY}`
+    url: '/api/stations'
   })
 );
+
 
 const streamRadioStation = (id) => (
   $.ajax({
@@ -12,10 +13,10 @@ const streamRadioStation = (id) => (
   })
 );
 
-const searchRadioStation = (search_term) => (
+const searchRadioStation = (searchTerm) => (
   $.ajax({
     method: 'GET',
-    url: `http://api.shoutcast.com/legacy/stationsearch?k=
-    ${SHOUTCAST_KEY}&search=${encodeURIComponent(search_term)}`
+    url: '/api/stations/search',
+    data: { searchTerm }
   })
 );
