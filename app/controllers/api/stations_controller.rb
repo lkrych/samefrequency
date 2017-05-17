@@ -2,13 +2,13 @@ require 'uri'
 class Api::StationsController < ApplicationController
   def index
     response = HTTParty.get("http://api.shoutcast.com/legacy/Top500?k=#{SHOUTCAST_KEY}&limit=16")
-    @clean = clean_response(response)
+    return clean_response(response)
   end
 
-  def search(search_term)
-    response = HTTParty.get("http://api.shoutcast.com/legacy/stationsearch?k=
-    #{SHOUTCAST_KEY}&search=#{URI.encode(search_term)}")
-    @clean = clean_response(response)
+  def search
+    search_term = URI.encode(params[:searchTerm])
+    response = HTTParty.get("http://api.shoutcast.com/legacy/stationsearch?k=#{SHOUTCAST_KEY}&search=#{search_term}")
+    return clean_response(response)
   end
 
   private
@@ -22,5 +22,9 @@ class Api::StationsController < ApplicationController
       clean.push(cleaned.to_json)
     end
     return clean
+  end
+
+  def stations_params
+    params.require(:stations).permit(:searchTerm)
   end
 end

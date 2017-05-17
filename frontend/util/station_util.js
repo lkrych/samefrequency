@@ -17,6 +17,6 @@ const searchRadioStation = (searchTerm) => (
   $.ajax({
     method: 'GET',
     url: '/api/stations/search',
-    data: { searchTerm }
+    data: { stations: {searchTerm} }
   })
 );
