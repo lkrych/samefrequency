@@ -18,7 +18,8 @@ class Api::StationsController < ApplicationController
     necessary_keys = ["name", "id", "genre"]
     station_info = response.parsed_response["stationlist"]["station"]
     station_info.each do |station|
-      clean.push(station.select {|key| necessary_keys.include?(key)})
+      cleaned = station.select {|key| necessary_keys.include?(key)}
+      clean.push(cleaned.to_json)
     end
     return clean
   end
