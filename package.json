@@ -26,7 +26,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "webpack": "webpack --w"
   },
   "engines": {
     "node": "6.10.1",
