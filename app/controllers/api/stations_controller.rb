@@ -1,4 +1,3 @@
-require 'uri'
 class Api::StationsController < ApplicationController
   def index
     response = HTTParty.get("http://api.shoutcast.com/legacy/Top500?k=#{SHOUTCAST_KEY}&limit=16")
