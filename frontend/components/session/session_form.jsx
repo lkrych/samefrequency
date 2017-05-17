@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onInput = this.onInput.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   handleSubmit(e){
@@ -23,6 +24,13 @@ class SessionForm extends React.Component {
     };
   }
 
+  demoLogin(e){
+    e.preventDefault();
+    this.setState( { email: 'user1@example.com',
+                      password: 'password'} );
+    this.props.history.push("/login");
+  }
+
   render(){
     const otherRoute = this.props.formType === 'login' ? 'signup' : 'login';
     const thisRouteText = this.props.formType === 'login' ? 'Log In' : 'Sign Up';
@@ -32,7 +40,7 @@ class SessionForm extends React.Component {
     }
     return(
       <form onSubmit={this.handleSubmit}>
-        <h2>{thisRouteText}</h2>
+        <br></br>
         <p>Please {this.props.formType} or {
             <Link to={`/${otherRoute}`}>
               { otherRoute } instead
@@ -62,6 +70,12 @@ class SessionForm extends React.Component {
         </div>
 
         <button className="btn btn-primary">{thisRouteText}</button>
+        <span></span>
+        <button
+          className="btn btn-info"
+          id="demo-login-btn"
+          onClick={this.demoLogin}>
+          Demo Login</button>
       </form>
     );
   }
