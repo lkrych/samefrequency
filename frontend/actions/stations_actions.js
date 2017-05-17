@@ -10,13 +10,13 @@ const receiveStations = (stations) => (
   }
 );
 
-const fetchAllStations = () => dispatch => {
+export const fetchAllStations = () => dispatch => {
   return APIUtil.fetchRadioStations().then(
     stations => dispatch(receiveStations(stations)),
     errors => dispatch(receiveErrors(errors.responseJSON)));
 };
 
-const searchStations = searchTerm => dispatch => {
+export const searchStations = searchTerm => dispatch => {
   return APIUtil.searchStations(searchTerm).then(
     searched => dispatch(receiveStations(searched)),
     errors => dispatch(receiveErrors(errors.responseJSON)));

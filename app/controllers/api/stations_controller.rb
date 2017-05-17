@@ -1,12 +1,12 @@
 class Api::StationsController < ApplicationController
   def index
-    response = HTTParty.get("http://api.shoutcast.com/legacy/Top500?k=#{SHOUTCAST_KEY}&limit=16")
+    response = HTTParty.get("http://api.shoutcast.com/legacy/Top500?k=#{Figaro.env.SHOUTCAST_KEY}&limit=16")
     return clean_response(response)
   end
 
   def search
     search_term = URI.encode(params[:searchTerm])
-    response = HTTParty.get("http://api.shoutcast.com/legacy/stationsearch?k=#{SHOUTCAST_KEY}&search=#{search_term}")
+    response = HTTParty.get("http://api.shoutcast.com/legacy/stationsearch?k=#{Figaro.env.SHOUTCAST_KEY}&search=#{search_term}")
     return clean_response(response)
   end
 

@@ -1,4 +1,4 @@
-import RECEIVE_STATIONS from '../actions/station_actions';
+import RECEIVE_STATIONS from '../actions/stations_actions';
 
 const stationsReducer = (state = [], action) => {
   Object.freeze(state);
