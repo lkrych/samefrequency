@@ -14,9 +14,9 @@
 * `DELETE /api/ser/:id` - remove profile
 
 
-### Channels/Channel
+### Stations/Station
 
-* `GET /api/channels` - retrieve all Channels
-* `GET /api/channel/:id` - retrieve one channel
+* `GET /api/stations` - retrieve all Channels
+* `GET /api/station/:id` - retrieve one channel
 
 #### Chat will be stateless.

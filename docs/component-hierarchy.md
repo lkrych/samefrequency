@@ -3,8 +3,8 @@
 #### AuthFormContainer
 * AuthForm
 
-#### Channel View Container
-* Channel View
+#### Station View Container
+* Station View
 
 #### Chat Container
 * Chat bar/input
@@ -22,15 +22,15 @@
 |----------|----------------------|
 |"/sign-up"|"AuthFormComponent"   |
 |"/sign-in"|"AuthFormComponent"   |
-|"/"       |"ChannelViewContainer"|
-|"/"       |"ChannelView"         |
-|"/channel"|"ChatContainer"       |
-|"/channel"|"ChatBar"             |
-|"/channel"|"ChatMessage"         |
-|"/channel"|"ChannelViewContainer"|
-|"/channel"|"ChannelView"         |
+|"/"       |"StationViewContainer"|
+|"/"       |"StationView"         |
+|"/station"|"ChatContainer"       |
+|"/station"|"ChatBar"             |
+|"/station"|"ChatMessage"         |
+|"/station"|"StationViewContainer"|
+|"/station"|"StationView"         |
 |"/user"   |"UserProfileContainer"|
 |"/user"   |"FriendViewContainer" |
 |"/user"   |"FriendView"          |
-|"/user"   |"ChannelViewContainer"|
-|"/user"   |"ChannelView"         |
+|"/user"   |"StationViewContainer"|
+|"/user"   |"StationView"         |

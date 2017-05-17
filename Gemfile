@@ -54,6 +54,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'rails_real_favicon'
+  gem 'httparty'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

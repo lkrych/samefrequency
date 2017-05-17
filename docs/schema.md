@@ -18,9 +18,9 @@
 |session_token| string    | nn,idx,u |
 
 user has_many: friends
-user has_many: favorite_channels
+user has_many: favorite_stations
 
-### channels
+### stations
 
 | column name | data type | details  |
 |-------------|-----------|----------|
