@@ -1,4 +1,5 @@
 import React from 'react';
+import GreetingContainer from '../greeting/greeting_container';
 
 class StationsView extends React.Component {
   constructor(props){
@@ -16,7 +17,10 @@ class StationsView extends React.Component {
 
   render(){
     return (
-      <div>This is the stations view!</div>
+      <div>
+        <GreetingContainer />
+      </div>
+
     );
   }
 }
