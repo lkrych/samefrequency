@@ -17,6 +17,6 @@ export const searchStations = (searchTerm) => (
   $.ajax({
     method: 'GET',
     url: '/api/stations/search',
-    data: { stations: {searchTerm} }
+    data: {searchTerm} 
   })
 );
