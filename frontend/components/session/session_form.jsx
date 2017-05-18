@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
           {errors}
         </ul>
         <div className="form-group">
-          <label> email:
+          <label> Your email:
             <input type='text'
               className="form-control"
               onChange={this.onInput('email')}

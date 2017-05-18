@@ -18,8 +18,8 @@ const App = () => (
       <AuthRoute path="/" component={SessionFormContainer} />
       <AuthRoute path="/" component={NewUserInfo} />
     </div>
+    <ProtectedRoute path="/" component={StationsContainer} />
   </div>
 );
 
-//<ProtectedRoute path="/" component={StationsContainer} />
 export default App;

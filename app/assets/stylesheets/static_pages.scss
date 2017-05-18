@@ -9,6 +9,10 @@ h1 , h2 {
   font-family: 'Lobster', cursive;
 }
 
+label {
+  text-align: left;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -18,8 +22,8 @@ h1 , h2 {
   width: 30vw;
   margin-top: 10vw;
   padding-bottom: 20px;
-  background-color: white;
-  opacity: 0.9;
+  background-color: #dad8d8;
+  opacity: 0.85;
   border-radius: 20px;
 }
 
