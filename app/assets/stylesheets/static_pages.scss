@@ -13,7 +13,11 @@ label {
   text-align: left;
 }
 
-.container {
+.main{
+  
+}
+
+.splash-modal {
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -26,12 +30,6 @@ label {
   opacity: 0.85;
   border-radius: 20px;
 }
-
-.container-empty{
-
-}
-
-
 
 .video {
  position: fixed;

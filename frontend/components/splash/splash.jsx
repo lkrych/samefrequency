@@ -6,7 +6,7 @@ import NewUserInfo from '../new_user_info/new_user_info.jsx';
 
 export default () => {
   return(
-    <div id= "splash" className ="container">
+    <div id= "splash" className ="splash-modal container">
       <header>
         <h1>Same Frequency</h1>
         <h2>Social Radio</h2>

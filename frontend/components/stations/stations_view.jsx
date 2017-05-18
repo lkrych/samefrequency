@@ -22,7 +22,17 @@ class StationsView extends React.Component {
     ));
 
     return (
-      <div>
+      <div className="container">
+        <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
+
+          <a className="navbar-brand" href="#">Same Frequency</a>
+
+          <form className="form-inline my-2 my-lg-0">
+            <input className="form-control mr-sm-2" type="text" placeholder="Search"></input>
+            <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+        </nav>
         <GreetingContainer />
         <section>
           <table className ="table">
