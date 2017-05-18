@@ -64,17 +64,10 @@ class StationsView extends React.Component {
             </div>
           </div>
         </nav>
-        <section>
-          <table className ="table">
-            <thead>
-              <tr>
-                <th> Image </th>
-                <th> Genre link</th>
-                <th> Title </th>
-              </tr>
-            </thead>
+        <section className="wrapper">
+          <ul className="img-grid">
             {stations}
-          </table>
+          </ul>
         </section>
       </div>
 

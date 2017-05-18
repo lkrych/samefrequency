@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { findImageUri } from '../../util/station_util';
+
 class StationDetail extends React.Component{
   constructor(props){
     super(props);
@@ -8,19 +10,14 @@ class StationDetail extends React.Component{
   render(){
     const station = this.props.station;
     return(
-      <tbody>
-        <tr>
-          <td>
-            <p>A nice image</p>
-          </td>
-          <td>
-            {station.genre}
-          </td>
-          <td>
-            {station.name}
-          </td>
-        </tr>
-      </tbody>
+      <li>
+       <a href="#" className="overlay-container"
+         data-overlay-text={station.name}>
+         <img src={findImageUri(station.genre)}
+            alt={`${station.name} a ${station.genre} radio station`}
+            className="overlay-img" />
+       </a>
+   </li>
     );
   }
 }
