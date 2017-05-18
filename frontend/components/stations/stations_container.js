@@ -2,12 +2,12 @@ import { connect } from 'react-redux';
 
 import StationsView from './stations_view';
 import { fetchAllStations, searchStations }
-  from '../../actions/session_actions';
+  from '../../actions/stations_actions';
 import { selectAllStations } from '../../reducers/selectors';
 
 const mapStateToProps = state => (
   {
-    stations: selectAllStations(state.stations)
+    stations: selectAllStations(state.stations.allStations)
   }
 );
 
