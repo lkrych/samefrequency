@@ -5,6 +5,15 @@ class StationsView extends React.Component {
     super(props);
   }
 
+  componentDidMount(){
+    $(".video").toggleClass("video-hide");
+  }
+
+  componentWillUnmount(){
+    $(".video").toggleClass("video-hide");
+
+  }
+
   render(){
     return (
       <div>This is the stations view!</div>

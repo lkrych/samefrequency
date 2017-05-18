@@ -19,6 +19,7 @@ const App = () => (
       <AuthRoute path="/" component={NewUserInfo} />
     </div>
     <ProtectedRoute path="/" component={StationsContainer} />
+
   </div>
 );
 
