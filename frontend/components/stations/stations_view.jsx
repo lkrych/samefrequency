@@ -1,6 +1,7 @@
 import React from 'react';
 import GreetingContainer from '../greeting/greeting_container';
 import StationDetail from './station_detail';
+import { findImages } from '../../util/station_util';
 
 class StationsView extends React.Component {
   constructor(props){
@@ -31,8 +32,10 @@ class StationsView extends React.Component {
   }
 
   render(){
-    const stations = this.props.stations.map(station => (
-      <StationDetail key={station.id} station={station} />
+    const image_uris = findImages(this.props.stations);
+
+    const stations = this.props.stations.map((station, idx) => (
+      <StationDetail key={station.id} station={station} uri={image_uris[idx]} />
     ));
 
     return (
