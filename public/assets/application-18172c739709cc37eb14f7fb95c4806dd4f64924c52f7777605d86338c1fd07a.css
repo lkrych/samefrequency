@@ -1,0 +1,167 @@
+/*html, body, section, article, h1, h2, p {
+  margin: 0;
+  border: 0;
+  padding 0;
+
+  font: inherit;
+  text-align: inherit;
+  text-decoration: inherit;
+  color: inherit;
+  background: transparent;
+}*/
+
+/* line 4, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/* line 8, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+h1, h2 {
+  font-family: 'Lobster', cursive;
+}
+
+/* line 12, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+label {
+  text-align: left;
+}
+
+/* line 16, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.splash-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+/* line 22, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.splash-modal {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  width: 30vw;
+  margin-top: 10vw;
+  padding-bottom: 20px;
+  background-color: #dad8d8;
+  opacity: 0.85;
+  border-radius: 20px;
+}
+
+/* line 36, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* line 47, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.video-hide {
+  visibility: hidden;
+}
+
+/* line 52, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+#demo-login-btn {
+  margin-left: 5px;
+}
+
+/* line 56, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.new-user-div {
+  cursor: pointer;
+  margin: 5px;
+}
+
+/* line 62, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper {
+  max-width: 80em;
+  margin: 0 auto;
+}
+/* line 65, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper li {
+  display: inline-block;
+  overflow: hidden;
+  max-height: 200px;
+}
+/* line 70, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper img {
+  max-width: 400px;
+  object-fit: cover;
+}
+/* line 74, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper .overlay-container {
+  display: block;
+  position: relative;
+}
+/* line 77, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper .overlay-container::before {
+  content: attr(data-overlay-text);
+  font: 1em/1.5em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  z-index: 1;
+  /*On top of parent*/
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: rgba(128, 128, 128, 0.8);
+  opacity: 0;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 99, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper .overlay-container:hover::before {
+  opacity: 1;
+  -moz-transform: translateY(20px);
+  -ms-transform: translateY(20px);
+  -o-transform: translateY(20px);
+  -webkit-transform: translateY(20px);
+  transform: translateY(20px);
+}
+/* line 107, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper .overlay-container .overlay-img {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+/* line 118, /Users/Leland/Desktop/appacademy/samefrequency/app/assets/stylesheets/static_pages.scss */
+.wrapper .overlay-container:hover .overlay-img {
+  -moz-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
