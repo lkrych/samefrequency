@@ -10,8 +10,9 @@ const App = () => (
   <div className ="main">
     <AuthRoute path="/" component={Splash} />
 
-    <ProtectedRoute path="/" component={StationsContainer} />
-    <ProtectedRoute path="/:id" component={ListenChatContainer} />
+    <ProtectedRoute path="/station/:id" component={ListenChatContainer} />
+    <ProtectedRoute path="/stations" component={StationsContainer} />
+
   </div>
 );
 
