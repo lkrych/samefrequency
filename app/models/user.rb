@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   attr_reader :password
+  
+  has_many :messages
+  has_many :chatrooms, through: :messages
 
   validates :email, :password_digest, :session_token, presence: true
   validates :email, :session_token, uniqueness: true
