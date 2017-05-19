@@ -26,36 +26,31 @@ export const findImages = (stations) => {
   const genres = lodash.keys(IMAGE_URI_FINDER);
   const stationGenres = stations.map(station => station.genre);
   let foundGenres = [];
+  let foundURIs = [];
   stationGenres.forEach(genre => {
-    if (foundGenres.includes(genre)){
-      foundGenres.push(findNewGenreUrl(foundGenres));
-    }else if (!genres.includes(genre)) {
-      foundGenres.push(findNewGenreUrl(foundGenres));
-    }else{
-      foundGenres.push(lodash.sample(IMAGE_URI_FINDER[genre]));
+    if (foundGenres.includes(genre) || !genres.includes(genre)){
+      const {randomGenre, randomURI} = findNewGenreUrl(foundURIs);
+      foundGenres.push(randomGenre);
+      foundURIs.push(randomURI);
+    } else{
+      foundGenres.push(genre);
+      foundURIs.push(lodash.sample(IMAGE_URI_FINDER[genre]));
     }
   });
-  return foundGenres;
+  return foundURIs;
 };
 
-const findNewGenreUrl = (already_displayed) => {
+const findNewGenreUrl = (alreadyDisplayed) => {
   const genres = lodash.keys(IMAGE_URI_FINDER);
-  let randomGenre = lodash.sample(IMAGE_URI_FINDER[lodash.sample(genres)]);
-  while(already_displayed.includes(randomGenre)){
-    randomGenre = lodash.sample(IMAGE_URI_FINDER[lodash.sample(genres)]);
+  let randomGenre = lodash.sample(genres);
+  let randomURI = lodash.sample(IMAGE_URI_FINDER[randomGenre]);
+  while(alreadyDisplayed.includes(randomURI)){
+    randomGenre = lodash.sample(genres);
+    randomURI = lodash.sample(IMAGE_URI_FINDER[randomGenre]);
   }
-  return randomGenre;
+  return {randomGenre: randomGenre, randomURI: randomURI};
 };
 
-export const findImageUri= (genre) => {
-   const genres = lodash.keys(IMAGE_URI_FINDER);
-   if (genres.includes(genre)){
-    return lodash.sample(IMAGE_URI_FINDER[genre]);
-  }else{
-    return lodash.sample(IMAGE_URI_FINDER[lodash.sample(genres)]);
-  }
-
-};
 
 const IMAGE_URI_FINDER = {
   'Alternative': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145166/alternative.jpg",
@@ -65,8 +60,8 @@ const IMAGE_URI_FINDER = {
   'Country': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145056/country.jpg"],
   'Decades': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143847/decades-2.jpg",
 "http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144214/pop-2.jpg"],
-  'Easy Listening': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144595/easy-listening.jpg",
-"http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146072/easy-listening-1.jpg"],
+  'Easy Listening': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144595/easy-listening-1.jpg",
+"http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146072/easy-listening-2.jpg"],
   'Electronic': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147393/electronic-music-1.jpg",
   "http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145053/electronic-music-2.jpg",
 "http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143784/electronic-3.jpg"],
@@ -78,18 +73,15 @@ const IMAGE_URI_FINDER = {
 "http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146864/jazz.jpg"],
   'Latin': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144172/latin.jpg"],
   'Metal': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143845/metal-2.jpg"],
-  'Middle Eastern' : ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495152210/middle-east.jpg"],
   'Misc': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147371/misc.jpg"],
   'New Age': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147880/new-age.jpg"],
   'Pop': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143964/pop.jpg"],
   'Public Radio': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147947/public-radio.jpg"],
-  'R&B and Urban': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147050/randb.jpg"],
   'Rap': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143755/rap.jpg",
   "http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143668/rap-2.jpg"],
   'Reggae': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143684/reggae.jpg"],
   'Rock': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143794/rock-2.jpg",
 "http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143752/rock.jpg"],
-  'Seasonal and Holiday': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146869/holiday.jpg"],
   'Soundtracks': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147172/soundtracks.jpg"],
   'Talk': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143898/talk.jpg"],
   'Themes': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146241/decades.jpg"]
