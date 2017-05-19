@@ -8,7 +8,7 @@ const mapStateToProps = (state,ownProps) => {
   const stationId = ownProps.match.params.id;
   return {
     station: findStation(stationId, state),
-    stream: state.stream.streamURI
+    stream: state.stream.streamUri
   };
 };
 

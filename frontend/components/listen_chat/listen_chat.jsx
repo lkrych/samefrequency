@@ -10,7 +10,7 @@ class ListenChat extends React.Component {
 
   componentDidMount(){
     $(".video").toggleClass("video-hide"); //hide video
-    this.props.streamRadioStation(parseInt(this.props.station.id));
+    this.props.fetchRadioStream(parseInt(this.props.station.id));
   }
 
   componentWillUnmount(){
@@ -18,6 +18,9 @@ class ListenChat extends React.Component {
   }
 
   render(){
+    if(!this.props.station.id){
+      return <div></div>;
+    }
     return(
       <div className="container">
         <nav className="navbar navbar-default">
@@ -38,9 +41,8 @@ class ListenChat extends React.Component {
 
           </div>
         </nav>
-
         <div className="musicPlayer">
-          <audio src={this.props.stream} controls autoplay></audio>
+          <audio src={this.props.stream} controls ></audio>
         </div>
       </div>
     );

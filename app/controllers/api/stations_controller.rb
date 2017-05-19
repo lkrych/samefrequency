@@ -12,7 +12,7 @@ class Api::StationsController < ApplicationController
 
   def stream
     response = HTTParty.get("http://yp.shoutcast.com/sbin/tunein-station.pls?id=#{params[:id].to_i}").parsed_response
-    stream_uri = URI.extract(response).first
+    stream_uri = URI.extract(response).first + "/;"
     render :json => stream_uri.to_json
   end
 
