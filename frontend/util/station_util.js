@@ -22,6 +22,10 @@ export const searchStations = (searchTerm) => (
   })
 );
 
+export const findStation = (id, store) => (
+   store.stations.allStations[id]
+);
+
 export const findImages = (stations) => {
   const genres = lodash.keys(IMAGE_URI_FINDER);
   const stationGenres = stations.map(station => station.genre);
