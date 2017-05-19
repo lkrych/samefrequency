@@ -8,13 +8,13 @@ export const fetchRadioStations = () => (
   })
 );
 
-export const streamRadioStation = (id) => {
-  const plsFile = $.ajax({
+export const streamRadioStation = (id) => (
+  $.ajax({
     method: 'GET',
     url: `/api/stations/stream`,
     data: {id}
-  });
-};
+  })
+);
 
 export const searchStations = (searchTerm) => (
   $.ajax({

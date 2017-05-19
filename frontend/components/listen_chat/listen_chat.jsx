@@ -10,8 +10,8 @@ class ListenChat extends React.Component {
 
   componentDidMount(){
     $(".video").toggleClass("video-hide"); //hide video
-    const stream = this.props.streamRadioStation(this.props.id);
     debugger;
+    const stream = this.props.streamRadioStation(parseInt(this.props.station.id));
     this.setState( {stream} );
   }
 
