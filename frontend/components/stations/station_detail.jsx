@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { findImageUri } from '../../util/station_util';
 
@@ -11,7 +12,7 @@ class StationDetail extends React.Component{
     const station = this.props.station;
     return(
       <li>
-       <a href="#" className="overlay-container"
+       <a href={`/${station.id}`} className="overlay-container"
          data-overlay-text={`Name: ${station.name} || Genre: ${station.genre}`}>
          <img src={this.props.uri}
             alt={`${station.name} a ${station.genre} radio station`}
