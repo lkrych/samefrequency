@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import ListenChat from 'listen_chat';
+import ListenChat from './listen_chat';
 import { findStation, streamRadioStation } from '../../util/station_util';
 
 const mapStateToProps = (state,ownProps) => {

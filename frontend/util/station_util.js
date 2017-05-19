@@ -1,4 +1,5 @@
 import lodash from 'lodash';
+import pls from 'pls';
 
 export const fetchRadioStations = () => (
   $.ajax({
@@ -7,12 +8,13 @@ export const fetchRadioStations = () => (
   })
 );
 
-export const streamRadioStation = (id) => (
-  $.ajax({
+export const streamRadioStation = (id) => {
+  const plsFile = $.ajax({
     method: 'GET',
-    url: `http://yp.shoutcast.com/sbin/tunein-station.m3u?id=${id}`
-  })
-);
+    url: `/api/stations/stream`,
+    data: {id}
+  });
+};
 
 export const searchStations = (searchTerm) => (
   $.ajax({
