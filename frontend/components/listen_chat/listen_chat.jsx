@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import GreetingContainer from '../greeting/greeting_container';
 
@@ -32,7 +33,7 @@ class ListenChat extends React.Component {
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="#">Same Frequency</a>
+              <Link className="navbar-brand" to="/stations">Same Frequency</Link>
             </div>
 
             <ul className="nav navbar-right">
