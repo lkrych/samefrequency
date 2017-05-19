@@ -7,7 +7,8 @@ import { fetchRadioStream } from '../../actions/stream_actions';
 const mapStateToProps = (state,ownProps) => {
   const stationId = ownProps.match.params.id;
   return {
-    station: findStation(stationId, state)
+    station: findStation(stationId, state),
+    stream: state.stream.streamURI
   };
 };
 

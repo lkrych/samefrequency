@@ -5,14 +5,12 @@ import GreetingContainer from '../greeting/greeting_container';
 class ListenChat extends React.Component {
   constructor(props){
     super(props);
-    this.state = {stream: ''};
+
   }
 
   componentDidMount(){
     $(".video").toggleClass("video-hide"); //hide video
-    debugger;
-    const stream = this.props.streamRadioStation(parseInt(this.props.station.id));
-    this.setState( {stream} );
+    this.props.streamRadioStation(parseInt(this.props.station.id));
   }
 
   componentWillUnmount(){
@@ -42,7 +40,7 @@ class ListenChat extends React.Component {
         </nav>
 
         <div className="musicPlayer">
-          <audio src={this.state.stream} controls autoplay></audio>
+          <audio src={this.props.stream} controls autoplay></audio>
         </div>
       </div>
     );
