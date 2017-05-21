@@ -10,12 +10,12 @@ class ListenChat extends React.Component {
   }
 
   componentDidMount(){
-    $(".video").toggleClass("video-hide"); //hide video
+    $// refactor //hide video
     this.props.fetchRadioStream(parseInt(this.props.station.id));
   }
 
   componentWillUnmount(){
-    $(".video").toggleClass("video-hide");
+    $// refactor
   }
 
   render(){

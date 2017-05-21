@@ -14,12 +14,12 @@ class StationsView extends React.Component {
   }
 
   componentDidMount(){
-    $(".video").toggleClass("video-hide"); //hide video
+    $// refactor //hide video
     this.props.fetchAllStations();
   }
 
   componentWillUnmount(){
-    $(".video").toggleClass("video-hide");
+    $// refactor
   }
 
   onInput(e){
