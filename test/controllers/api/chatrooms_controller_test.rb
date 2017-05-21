@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ChatroomsControllerTest < ActionDispatch::IntegrationTest
+class Api::ChatroomsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
