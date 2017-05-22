@@ -1,4 +1,4 @@
-json.messages messages.each do |message|
+json.messages do 
   json.id message.id
   json.content message.content
   json.created_at message.created_at

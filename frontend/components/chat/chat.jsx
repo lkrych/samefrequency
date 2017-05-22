@@ -9,6 +9,7 @@ class Chat extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount(){
+    this.props.showAllMessages(this.props.station.id);
     App.chatchannel = App.cable.subscriptions.create(
       { channel: "StationsChannel",
       station_id: this.props.station.id }, {
@@ -29,7 +30,6 @@ class Chat extends React.Component {
       { content: this.state.message, chatroom_id: this.props.station.id,
       user_id: this.props.user.currentUser.id });
     this.setState( {message: ''});
-    this.props.showAllMessages(this.props.station.id);
   }
   render(){
     const messages = this.props.messages.map(message => (
