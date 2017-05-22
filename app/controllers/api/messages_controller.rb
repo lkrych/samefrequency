@@ -6,9 +6,10 @@ class Api::MessagesController < ApplicationController
       ActionCable.server.broadcast '',
         message: message.content,
         user: message.user.email.split("@").first
+        chatroom: message.chatroom
       head :ok
     else
-      redirect_to chatrooms_path
+      render json: ["Unprocessable Entity"], status: 422
     end
   end
 
