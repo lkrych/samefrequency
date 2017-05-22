@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/', to: 'static_pages#root'
   get '/api/stations/search', to: 'api/stations#search'
   get '/api/stations/stream', to: 'api/stations#stream'
-  get '/api/chatrooms', to: 'api/chatrooms#show'
+  get '/api/chatrooms', to: 'api/chatrooms#index'
   post '/api/messages', to: 'api/messages#create'
 
   namespace :api, defaults: { format: :json } do

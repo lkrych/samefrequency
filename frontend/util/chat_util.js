@@ -2,7 +2,7 @@ export const fetchStationMessages = (stationId) => (
   $.ajax({
     method: "GET" ,
     url: "api/chatrooms" ,
-    data: {stationId}
+    data: {station_id: stationId}
   })
 );
 
@@ -10,6 +10,6 @@ export const addMessageToStation = (message, stationId) => (
   $.ajax({
     method: "POST" ,
     url: "api/chatrooms" ,
-    data: {message, stationId}
+    data: {content: message, chatroom_id: stationId}
   })
 );
