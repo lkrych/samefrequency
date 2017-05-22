@@ -6,14 +6,14 @@ import { receiveErrors } from './error_actions';
  const showMessages = (messages) => (
    {
     type: SHOW_MESSAGES,
-    messages: messages
+    messages
   }
 );
 
 const addMessage = (message) => (
    {
     type: ADD_MESSAGE,
-    message: message
+    message
   }
 );
 
