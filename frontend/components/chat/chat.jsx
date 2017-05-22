@@ -23,9 +23,11 @@ class Chat extends React.Component {
     this.setState( { message: e.target.value });
   }
 
-  handleSubmit(){
+  handleSubmit(e){
+    e.preventDefault();
     window.App.chatchannel.send(
       { content: this.state.message, chatroom_id: this.props.station.id });
+    this.setState( {message: ''});
   }
   render(){
     const messages = this.props.messages.map(message => (
