@@ -6,7 +6,7 @@ const chatReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_MESSAGES:
-      return [...state, action.message];
+      return [...state, action.messages];
     default:
       return state;
   }
