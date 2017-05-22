@@ -5,6 +5,6 @@ class MessageRelayJob < ApplicationJob
       locals: { message: message }
     )
     ActionCable.server.broadcast("station_#{station_id}",
-                                 message: JSON.parse(message))
+                                 messages: JSON.parse(message))
   end
 end
