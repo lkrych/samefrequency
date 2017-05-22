@@ -25,8 +25,6 @@ class Chat extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    console.log(this.props.user.currentUser);
-    console.log(this.props);
     App.chatchannel.send(
       { content: this.state.message, chatroom_id: this.props.station.id,
       user_id: this.props.user.currentUser.id });

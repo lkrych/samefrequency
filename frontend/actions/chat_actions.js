@@ -10,16 +10,8 @@ export const receiveMessages = (messages) => (
   }
 );
 
-
-
-// export const showAllMessages = (stationId) => dispatch => (
-//    APIUtil.fetchStationMessages(stationId).then(
-//     messages => dispatch(showMessages(messages)),
-//     errors => dispatch(receiveErrors(errors.responseJSON)))
-// );
-//
-// export const addMessageToStation = (message, stationId) => dispatch => (
-//    APIUtil.addMessageToStation(message, stationId).then(
-//     messages => dispatch(addMessage(message)),
-//     errors => dispatch(receiveErrors(errors.responseJSON)))
-// );
+export const showAllMessages = (stationId) => dispatch => (
+   APIUtil.fetchStationMessages(stationId).then(
+    messages => dispatch(receiveMessages(messages)),
+    errors => dispatch(receiveErrors(errors.responseJSON)))
+);
