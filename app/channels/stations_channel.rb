@@ -4,8 +4,12 @@ class StationsChannel < ApplicationCable::Channel
   end
 
   def receive(data)
+    chatroom = Chatroom.find_by_station_id(data['chatroom_id'])
+    unless chatroom
+      chatroom = Chatroom.create! station_id: data['chatroom_id']
+    end
     Message.create! content: data['content'],
-    chatroom_id: data['chatroom_id'], user_id: current_user.id
+    chatroom_id: chatroom.id, user_id: data['user_id']
   end
 
 end

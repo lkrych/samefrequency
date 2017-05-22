@@ -12,13 +12,13 @@ class StationDetail extends React.Component{
     const station = this.props.station;
     return(
       <li>
-       <Link to={`/station/${station.id}`} className="overlay-container"
+        <Link to={`/station/${station.id}`} className="overlay-container"
          data-overlay-text={`Name: ${station.name} || Genre: ${station.genre}`}>
          <img src={this.props.uri}
             alt={`${station.name} a ${station.genre} radio station`}
             className="overlay-img" />
         </Link>
-   </li>
+      </li>
     );
   }
 }

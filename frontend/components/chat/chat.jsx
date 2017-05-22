@@ -9,7 +9,7 @@ class Chat extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount(){
-    window.App.chatchannel = window.App.cable.subscriptions.create(
+    App.chatchannel = App.cable.subscriptions.create(
       { channel: "StationsChannel",
       station_id: this.props.station.id }, {
       received: (data) => {
@@ -25,8 +25,11 @@ class Chat extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    window.App.chatchannel.send(
-      { content: this.state.message, chatroom_id: this.props.station.id });
+    console.log(this.props.user.currentUser);
+    console.log(this.props);
+    App.chatchannel.send(
+      { content: this.state.message, chatroom_id: this.props.station.id,
+      user_id: this.props.user.currentUser.id });
     this.setState( {message: ''});
   }
   render(){
@@ -44,9 +47,10 @@ class Chat extends React.Component {
             <input type='text'
               className="form-control"
               onChange={this.onInput}
-              value={this.state.email}>
+              value={this.state.message}>
             </input>
           </div>
+          <button className="btn btn-primary">Send</button>
         </form>
       </div>
     );

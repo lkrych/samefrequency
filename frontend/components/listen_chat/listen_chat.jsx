@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import GreetingContainer from '../greeting/greeting_container';
+import ChatContainer from '../chat/chat_container';
 
 class ListenChat extends React.Component {
   constructor(props){
@@ -43,6 +44,7 @@ class ListenChat extends React.Component {
         <div className="musicPlayer">
           <audio src={this.props.stream} controls ></audio>
         </div>
+        <ChatContainer station={this.props.station}/>
       </div>
     );
   }

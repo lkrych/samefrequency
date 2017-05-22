@@ -5,16 +5,16 @@ import {receiveMessages, addMessageToStation} from '../../actions/chat_actions';
 
 const mapStateToProps = state => (
   {
-    messages: state.chat
+    messages: state.chat,
+    user: state.session
   }
 );
 
 const mapDispatchToProps = dispatch => (
   {
     receiveMessages: (stationId) => dispatch(
-      receiveMessages(stationId)),
-    addMessageToStation: (message, stationId) => dispatch(
-       addMessageToStation(message, stationId))
+      receiveMessages(stationId))
+
   }
 );
 
