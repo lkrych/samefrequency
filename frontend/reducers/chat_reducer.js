@@ -1,4 +1,4 @@
-import { SHOW_MESSAGES, ADD_MESSAGE } from '../actions/chat';
+import { SHOW_MESSAGES, ADD_MESSAGE } from '../actions/chat_actions';
 import { RECEIVE_ERRORS } from '../actions/error_actions';
 
 const _nullMessages= {
