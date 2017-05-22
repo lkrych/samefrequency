@@ -53,7 +53,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   #tells the consumer where to listen for action cable updates
-  config.action_cable.url = "wss://still-taiga-52460.herokuapp.com//cable"
-  #tell the actioncable server where to accept requests
-  config.action_cable.allowed_request_origins = ['https://still-taiga-52460.herokuapp.com', 'http://still-taiga-52460.herokuapp.com']
+  config.action_cable.url = "ws://localhost:3000/cable"
+ 
 end

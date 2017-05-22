@@ -71,6 +71,9 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
+  config.action_cable.url = "wss://still-taiga-52460.herokuapp.com//cable"
+  #tell the actioncable server where to accept requests
+  config.action_cable.allowed_request_origins = ['https://still-taiga-52460.herokuapp.com', 'http://still-taiga-52460.herokuapp.com']
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
