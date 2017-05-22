@@ -1,11 +1,12 @@
 import { connect } from 'react-redux';
 
 import Chat from './chat';
-import {receiveMessages, showAllMessages } from '../../actions/chat_actions';
+import { receiveMessages, showAllMessages } from '../../actions/chat_actions';
+import { selectAllMessages } from '../../util/chat_util';
 
 const mapStateToProps = state => (
   {
-    messages: state.chat,
+    messages: selectAllMessages(state.chat),
     user: state.session
   }
 );
