@@ -12,8 +12,10 @@ const chatReducer = (state = _nullChat, action) => {
   switch(action.type) {
     case RECEIVE_MESSAGES:
       return merge({}, state, {allMessages: action.messages});
-    default:
+    case RECEIVE_ERRORS:
       return merge({}, state, {errors: action.errors});
+    default:
+      return state;
   }
 };
 
