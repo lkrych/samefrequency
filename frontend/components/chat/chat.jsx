@@ -9,7 +9,7 @@ class Chat extends React.Component {
     window.App.cable.subscriptions.create({ channel: "StationsChannel",
       station_id: this.props.station.id }, {
       received: (data) => {
-        this.props.addMessageToStation(data.content);
+        this.props.receiveMessages(data.content);
       }
     });
   }
@@ -22,6 +22,9 @@ class Chat extends React.Component {
         <ul>
           {messages}
         </ul>
+
+        <form className="chat-text-input">
+        </form>
       </div>
     );
   }
