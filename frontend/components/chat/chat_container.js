@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Chat from './chat';
-import {showAllMessages, addMessageToStation} from '../../actions/chat_actions';
+import {receiveMessages, addMessageToStation} from '../../actions/chat_actions';
 
 const mapStateToProps = state => (
   {
@@ -11,8 +11,8 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = dispatch => (
   {
-    showAllMessages: (stationId) => dispatch(
-      showAllMessages(stationId)),
+    receiveMessages: (stationId) => dispatch(
+      receiveMessages(stationId)),
     addMessageToStation: (message, stationId) => dispatch(
        addMessageToStation(message, stationId))
   }

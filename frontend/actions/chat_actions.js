@@ -3,7 +3,7 @@ export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
 import * as APIUtil from '../util/chat_util';
 import { receiveErrors } from './error_actions';
 
- const receiveMessages = (messages) => (
+export const receiveMessages = (messages) => (
    {
     type: RECEIVE_MESSAGES,
     messages
