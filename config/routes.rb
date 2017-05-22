@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get '/api/stations/search', to: 'api/stations#search'
   get '/api/stations/stream', to: 'api/stations#stream'
   get '/api/chatrooms', to: 'api/chatrooms#show'
-  post '/api/messages', to: 'api/messages#create'
 
   namespace :api, defaults: { format: :json } do
     resources :users, only: [:create, :show]

@@ -29,6 +29,7 @@ class Chat extends React.Component {
       { content: this.state.message, chatroom_id: this.props.station.id,
       user_id: this.props.user.currentUser.id });
     this.setState( {message: ''});
+    this.props.showAllMessages(this.props.station.id);
   }
   render(){
     const messages = this.props.messages.map(message => (
