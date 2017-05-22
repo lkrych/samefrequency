@@ -1,18 +1,12 @@
-import { SHOW_MESSAGES, ADD_MESSAGE } from '../actions/chat_actions';
+import { RECEIVE_MESSAGES } from '../actions/chat_actions';
 import { RECEIVE_ERRORS } from '../actions/error_actions';
 
-const _nullMessages= {
-  messages: [],
-  errors: []
-};
 
-export const chatReducer = (state = _nullMessages, action) => {
+export const chatReducer = (state = [], action) => {
   Object.freeze(state);
   switch(action.type) {
-    case ADD_MESSAGE:
+    case RECEIVE_MESSAGES:
       return [...state, action.message];
-    case SHOW_MESSAGES:
-      return action.messages;
     default:
       return state;
   }

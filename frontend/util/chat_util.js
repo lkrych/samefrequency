@@ -1,3 +1,5 @@
+
+//AJAX HTTP Requests are not necessary for Websockets!
 export const fetchStationMessages = (stationId) => (
   $.ajax({
     method: "GET" ,

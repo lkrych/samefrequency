@@ -6,7 +6,12 @@ class Chat extends React.Component {
     super(props);
   }
   componentDidMount(){
-    this.props.showAllMessages(this.props.id);
+    window.App.cable.subscriptions.create({ channel: "StationsChannel",
+      chatroom_id: this.props.station.id }, {
+      received: (data) => {
+        this.props.addMessageToStation(data.content);
+      }
+    });
   }
   render(){
     const messages = this.props.messages.map(message => (

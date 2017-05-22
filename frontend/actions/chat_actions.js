@@ -1,30 +1,25 @@
-export const ADD_MESSAGE = "ADD_MESSAGES";
-export const SHOW_MESSAGES = "SHOW_MESSAGES";
+export const RECEIVE_MESSAGES = "RECEIVE_MESSAGES";
+
 import * as APIUtil from '../util/chat_util';
 import { receiveErrors } from './error_actions';
 
- const showMessages = (messages) => (
+ const receiveMessages = (messages) => (
    {
-    type: SHOW_MESSAGES,
+    type: RECEIVE_MESSAGES,
     messages
   }
 );
 
-const addMessage = (message) => (
-   {
-    type: ADD_MESSAGE,
-    message
-  }
-);
 
-export const showAllMessages = (stationId) => dispatch => (
-   APIUtil.fetchStationMessages(stationId).then(
-    messages => dispatch(showMessages(messages)),
-    errors => dispatch(receiveErrors(errors.responseJSON)))
-);
 
-export const addMessageToStation = (message, stationId) => dispatch => (
-   APIUtil.addMessageToStation(message, stationId).then(
-    messages => dispatch(addMessage(message)),
-    errors => dispatch(receiveErrors(errors.responseJSON)))
-);
+// export const showAllMessages = (stationId) => dispatch => (
+//    APIUtil.fetchStationMessages(stationId).then(
+//     messages => dispatch(showMessages(messages)),
+//     errors => dispatch(receiveErrors(errors.responseJSON)))
+// );
+//
+// export const addMessageToStation = (message, stationId) => dispatch => (
+//    APIUtil.addMessageToStation(message, stationId).then(
+//     messages => dispatch(addMessage(message)),
+//     errors => dispatch(receiveErrors(errors.responseJSON)))
+// );
