@@ -40,7 +40,7 @@ class Chat extends React.Component {
     ));
     return(
       <div className="chat-container">
-        <ul>
+        <ul className="chat-list">
           {messages}
         </ul>
 
@@ -51,8 +51,8 @@ class Chat extends React.Component {
               onChange={this.onInput}
               value={this.state.message}>
             </input>
+            <button className="btn btn-primary chat-icon">Send</button>
           </div>
-          <button className="btn btn-primary">Send</button>
         </form>
       </div>
     );

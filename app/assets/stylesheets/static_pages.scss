@@ -59,6 +59,27 @@ label {
   margin: 5px;
 }
 
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+
+  .chat-list {
+    padding-left: 0pt;
+  }
+  .chat-text-input {
+    position: relative;
+
+    .chat-text-input {
+      width: 100%;
+    }
+    .chat-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
 // message-detail
 li {
   list-style: none;
