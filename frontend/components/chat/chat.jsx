@@ -14,7 +14,7 @@ class Chat extends React.Component {
       { channel: "StationsChannel",
       station_id: this.props.station.id }, {
       received: (data) => {
-        this.props.receiveMessages(data);
+        this.props.receiveMessage(data);
       }
     });
   }

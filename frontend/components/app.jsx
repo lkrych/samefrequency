@@ -8,7 +8,7 @@ import ListenChatContainer from './listen_chat/listen_chat_container';
 
 const App = () => (
   <div className ="main">
-    <AuthRoute path="/" component={Splash} />
+    <AuthRoute exact path="/" component={Splash} />
 
     <ProtectedRoute path="/station/:id" component={ListenChatContainer} />
     <ProtectedRoute path="/stations" component={StationsContainer} />

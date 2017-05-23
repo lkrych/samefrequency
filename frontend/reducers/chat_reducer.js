@@ -1,4 +1,4 @@
-import { RECEIVE_MESSAGES } from '../actions/chat_actions';
+import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/chat_actions';
 import { RECEIVE_ERRORS } from '../actions/error_actions';
 import merge from 'lodash/merge';
 
@@ -12,6 +12,10 @@ const chatReducer = (state = _nullChat, action) => {
   switch(action.type) {
     case RECEIVE_MESSAGES:
       return merge({}, state, {allMessages: action.messages});
+    case RECEIVE_MESSAGE:
+      const newMessage = action.message;
+      const newMessageState = merge({},state.allMessages, newMessage);
+      return merge({}, state, {allMessages: newMessageState});
     case RECEIVE_ERRORS:
       return merge({}, state, {errors: action.errors});
     default:
