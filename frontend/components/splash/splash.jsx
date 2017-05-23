@@ -14,7 +14,7 @@ export default () => {
       <div id= "splash" className ="splash-modal">
         <header>
           <h1>Same Frequency</h1>
-          <h2>Social Radio</h2>
+          <h2>Radio Chatrooms</h2>
         </header>
         <AuthRoute path="/" component={SessionFormContainer} />
         <AuthRoute path="/" component={NewUserInfo} />

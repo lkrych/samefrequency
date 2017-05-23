@@ -51,7 +51,7 @@ class Chat extends React.Component {
               onChange={this.onInput}
               value={this.state.message}>
             </input>
-            <button className="btn btn-primary chat-icon">Send</button>
+            <button className="btn btn-primary chat-icon"><span>Send</span></button>
           </div>
         </form>
       </div>

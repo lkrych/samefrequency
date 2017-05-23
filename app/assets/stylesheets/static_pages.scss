@@ -2,9 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-h1 , h2 {
+h1, h2 {
   font-family: 'Lobster', cursive;
 }
+
 
 .navbar-brand {
   font-family: 'Lobster', cursive;
@@ -59,6 +60,10 @@ label {
   margin: 5px;
 }
 
+.listen-chat{
+  
+}
+
 .chat-container {
   display: flex;
   flex-direction: column;
@@ -69,15 +74,22 @@ label {
   }
   .chat-text-input {
     position: relative;
-
-    .chat-text-input {
-      width: 100%;
-    }
+    width: 100%;
     .chat-icon {
       position: absolute;
       top: 0;
       right: 0;
+      width: 32px;
+      height: 32px;
+      object-fit: fill;
+      background-color: Transparent;
+      border: none;
+      background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
+      span {
+        display: none;
+      }
     }
+
   }
 }
 // message-detail

@@ -24,10 +24,9 @@ class NewUserInfo extends React.Component {
       return(
         <div className="new-user-div">
           <br></br>
-          <p onClick={this.toggleDiv}>Wouldn't it be nice if you could trade Tweet
-            storms for Fireside chats? Grab your family and friends and
-            (virtually) gather around the radio with Same Frequency,
-            a social radio app.</p>
+          <p onClick={this.toggleDiv}>Same Frequency makes it easy to listen to
+             the radio with people from around the world. Pick a station
+              and chat with everyone else that is listening.</p>
         </div>
       );
     }
