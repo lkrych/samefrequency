@@ -8,7 +8,7 @@ export default () => {
   return(
     <div className="splash-container">
       <video className="video"
-        src="http://res.cloudinary.com/heab4q3lg/video/upload/v1494991486/reel-2_d5uumo.mp4"
+        src="https://res.cloudinary.com/heab4q3lg/video/upload/v1494991486/reel-2_d5uumo.mp4"
          autoPlay loop>
       </video>
       <div id= "splash" className ="splash-modal">
