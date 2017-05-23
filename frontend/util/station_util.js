@@ -64,6 +64,15 @@ const findNewGenreUrl = (alreadyDisplayed) => {
   return {randomGenre: randomGenre, randomURI: randomURI};
 };
 
+export const findImageUri = (genre) => {
+  const genres = lodash.keys(IMAGE_URI_FINDER);
+  if (genres.includes(genre)){
+    return lodash.sample(IMAGE_URI_FINDER[genre]);
+  } else{
+    let randomGenre = lodash.sample(genres);
+    return lodash.sample(IMAGE_URI_FINDER[genre]);
+  }
+};
 
 const IMAGE_URI_FINDER = {
   'Alternative': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145166/alternative.jpg",

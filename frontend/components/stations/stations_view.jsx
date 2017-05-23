@@ -32,10 +32,10 @@ class StationsView extends React.Component {
   }
 
   render(){
-    const image_uris = findImages(this.props.stations);
+    const imageUris = findImages(this.props.stations);
 
     const stations = this.props.stations.map((station, idx) => (
-      <StationDetail key={station.id} station={station} uri={image_uris[idx]} />
+      <StationDetail key={station.id} station={station} uri={imageUris[idx]} />
     ));
 
     return (

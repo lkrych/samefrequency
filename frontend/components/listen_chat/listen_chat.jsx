@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import GreetingContainer from '../greeting/greeting_container';
 import ChatContainer from '../chat/chat_container';
+import { findImageUri } from '../../util/station_util';
 
 class ListenChat extends React.Component {
   constructor(props){
@@ -13,8 +14,6 @@ class ListenChat extends React.Component {
   componentDidMount(){
     this.props.fetchRadioStream(parseInt(this.props.match.params.id));
   }
-
-
 
   render(){
     if(!this.props.station){
@@ -40,6 +39,19 @@ class ListenChat extends React.Component {
 
           </div>
         </nav>
+
+        <img src={findImageUri(this.props.station.genre)}
+           className="player-img"/>
+
+         <div className="station-info">
+           <h3>
+            Station Name: { this.props.station.name }
+           </h3>
+           <h4>
+            Genre: { this.props.station.genre }
+           </h4>
+         </div>
+
         <div className="musicPlayer">
           <audio src={this.props.stream} controls ></audio>
         </div>

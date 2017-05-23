@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { findImageUri } from '../../util/station_util';
-
 class StationDetail extends React.Component{
   constructor(props){
     super(props);
