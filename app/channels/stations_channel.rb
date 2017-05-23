@@ -1,6 +1,10 @@
 class StationsChannel < ApplicationCable::Channel
   def subscribed
     stream_from "station_#{params[:station_id]}"
+    chatroom = Chatroom.find_by_station_id(params[:station_id])
+    unless chatroom
+      chatroom = Chatroom.create! station_id: params[:station_id]
+    end
   end
 
   def receive(data)
