@@ -9,16 +9,19 @@ class Chat extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount(){
-    this.props.showAllMessages(this.props.station.id);
-    App.chatchannel = App.cable.subscriptions.create(
+    window.App.chatchannel = window.App.cable.subscriptions.create(
       { channel: "StationsChannel",
       station_id: this.props.station.id }, {
       received: (data) => {
         this.props.receiveMessage(data);
       }
     });
+    this.props.showAllMessages(this.props.station.id);
   }
 
+  componentWillUnmount(){
+    window.App.cable.subscriptions.remove(window.App.chatchannel);
+  }
   onInput(e){
     e.preventDefault();
     this.setState( { message: e.target.value });
@@ -26,7 +29,7 @@ class Chat extends React.Component {
 
   handleSubmit(e){
     e.preventDefault();
-    App.chatchannel.send(
+    window.App.chatchannel.send(
       { content: this.state.message, chatroom_id: this.props.station.id,
       user_id: this.props.user.currentUser.id });
     this.setState( {message: ''});
