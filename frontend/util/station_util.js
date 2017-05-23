@@ -8,6 +8,13 @@ export const fetchRadioStations = () => (
   })
 );
 
+export const fetchStation = (stationId) => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/stations'
+  })
+);
+
 export const streamRadioStation = (id) => (
   $.ajax({
     method: 'GET',

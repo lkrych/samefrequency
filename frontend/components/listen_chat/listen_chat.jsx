@@ -11,7 +11,6 @@ class ListenChat extends React.Component {
   }
 
   componentDidMount(){
-     //hide video
     this.props.fetchRadioStream(parseInt(this.props.match.params.id));
   }
 
