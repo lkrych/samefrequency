@@ -40,20 +40,22 @@ class ListenChat extends React.Component {
           </div>
         </nav>
         <div className='listen-chat'>
-          <img src={findImageUri(this.props.station.genre)}
-             className="player-img"/>
+          <div className='station-info-group'>
+            <img src={findImageUri(this.props.station.genre)}
+               className="player-img"/>
 
-           <div className="station-info">
-             <h3>
-              Station Name: { this.props.station.name }
-             </h3>
-             <h4>
-              Genre: { this.props.station.genre }
-             </h4>
-           </div>
+             <div className="station-info">
+               <h3>
+                Station Name: { this.props.station.name }
+               </h3>
+               <h4>
+                Genre: { this.props.station.genre }
+               </h4>
+             </div>
 
-          <div className="musicPlayer">
-            <audio src={this.props.stream} controls ></audio>
+            <div className="musicPlayer">
+              <audio src={this.props.stream} controls ></audio>
+            </div>
           </div>
           <ChatContainer station={this.props.station}/>
         </div>

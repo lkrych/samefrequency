@@ -61,37 +61,49 @@ label {
 }
 
 .listen-chat{
-  
-}
-
-.chat-container {
   display: flex;
-  flex-direction: column;
-  width: 50vw;
 
-  .chat-list {
-    padding-left: 0pt;
+  .station-info-group {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+
+    .player-img {
+      max-width: 400px;
+      object-fit: cover
+    }
   }
-  .chat-text-input {
-    position: relative;
-    width: 100%;
-    .chat-icon {
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 32px;
-      height: 32px;
-      object-fit: fill;
-      background-color: Transparent;
-      border: none;
-      background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
-      span {
-        display: none;
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    padding-left: 10px;
+
+    .chat-list {
+      padding-left: 0pt;
+    }
+    .chat-text-input {
+      position: relative;
+      width: 100%;
+      .chat-icon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 32px;
+        height: 32px;
+        object-fit: fill;
+        background-color: Transparent;
+        border: none;
+        background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
+        span {
+          display: none;
+        }
       }
     }
-
   }
 }
+
+
 // message-detail
 li {
   list-style: none;
