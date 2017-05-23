@@ -11,7 +11,7 @@ const chatReducer = (state = _nullChat, action) => {
   Object.freeze(state);
   switch(action.type) {
     case RECEIVE_MESSAGES:
-      return merge({}, state, {allMessages: action.messages});
+      return merge({}, _nullChat, {allMessages: action.messages});
     case RECEIVE_MESSAGE:
       const newMessage = action.message;
       const newMessageState = merge({},state.allMessages, newMessage);

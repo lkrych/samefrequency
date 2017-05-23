@@ -9,6 +9,7 @@ class Chat extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   componentDidMount(){
+    console.log(this.props);
     window.App.chatchannel = window.App.cable.subscriptions.create(
       { channel: "StationsChannel",
       station_id: this.props.station.id }, {
