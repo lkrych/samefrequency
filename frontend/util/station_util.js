@@ -80,6 +80,8 @@ const IMAGE_URI_FINDER = {
   'Blues': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145109/blues.jpg"],
   'Classical': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495148335/classical.jpg"],
   'Country': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145056/country.jpg"],
+  'Cumbia': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144172/latin.jpg"],
+  'Dance': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495512114/dance.jpg"],
   'Decades': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143847/decades-2.jpg",
 "https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144214/pop-2.jpg"],
   'Easy Listening': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144595/easy-listening-1.jpg",
@@ -106,5 +108,7 @@ const IMAGE_URI_FINDER = {
 "https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143752/rock.jpg"],
   'Soundtracks': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147172/soundtracks.jpg"],
   'Talk': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143898/talk.jpg"],
-  'Themes': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146241/decades.jpg"]
+  'Top 40':["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495512237/top40.jpg"],
+  'Themes': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495146241/decades.jpg"],
+  '80s': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495512114/80s.jpg"]
 };
