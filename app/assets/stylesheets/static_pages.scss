@@ -62,7 +62,6 @@ label {
 
 .listen-chat{
   display: flex;
-
   .station-info-group {
     display: flex;
     flex-direction: column;
@@ -78,26 +77,32 @@ label {
     flex-direction: column;
     width: 40vw;
     padding-left: 10px;
+    padding-right: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
 
     .chat-list {
       padding-left: 0pt;
     }
-    .chat-text-input {
-      position: relative;
-      width: 100%;
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      
+      .form-control {
+        width: 90%;
+      }
       .chat-icon {
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 32px;
-        height: 32px;
-        object-fit: fill;
-        background-color: Transparent;
-        border: none;
-        background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
-        span {
-          display: none;
-        }
+          width: 32px;
+          height: 32px;
+          padding-left: 1px;
+          object-fit: fill;
+          background-color: Transparent;
+          border: none;
+          background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
+          span {
+            display: none;
+          }
       }
     }
   }
