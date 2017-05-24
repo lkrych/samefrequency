@@ -86,6 +86,7 @@ GEM
     httparty (0.15.4)
       multi_xml (>= 0.5.2)
     i18n (0.8.1)
+    ipaddress (0.8.3)
     jbuilder (2.6.4)
       activesupport (>= 3.0.0)
       multi_json (>= 1.2)
@@ -226,6 +227,7 @@ DEPENDENCIES
   devise
   figaro
   httparty
+  ipaddress
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
