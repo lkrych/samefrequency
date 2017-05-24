@@ -17,6 +17,11 @@ class Chat extends React.Component {
       }
     });
     this.props.showAllMessages(this.props.station.id);
+    $('.chat-list').scrollTop($('.chat-list')[0].scrollHeight);
+  }
+
+  componentDidUpdate(){
+    $('.chat-list').scrollTop($('.chat-list')[0].scrollHeight);
   }
 
   componentWillUnmount(){

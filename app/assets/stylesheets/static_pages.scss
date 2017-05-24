@@ -83,12 +83,14 @@ label {
 
     .chat-list {
       padding-left: 0pt;
+      height: 300px;
+      overflow: scroll;
     }
     .form-group {
       display: flex;
       flex-direction: row;
       justify-content: space-around;
-      
+
       .form-control {
         width: 90%;
       }
