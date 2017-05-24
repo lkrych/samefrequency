@@ -69,7 +69,8 @@ label {
 
     .player-img {
       max-width: 400px;
-      object-fit: cover
+      object-fit: cover;
+      border-radius: 20px;
     }
   }
   .chat-container {
@@ -78,7 +79,7 @@ label {
     width: 40vw;
     padding-left: 10px;
     padding-right: 5px;
-    border: 1px solid black;
+    border: 5px solid black;
     border-radius: 20px;
 
     .chat-list {
