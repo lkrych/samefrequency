@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
 import StationDetail from './station_detail';
 import { findImages } from '../../util/station_util';
+import NavContainer from '../nav/nav_container';
 
 
 class StationsView extends React.Component {
@@ -41,37 +42,7 @@ class StationsView extends React.Component {
 
     return (
       <div className="container">
-        <nav className="navbar navbar-default">
-          <div className="container-fluid">
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <Link className="navbar-brand" to="/stations">Same Frequency</Link>
-            </div>
-
-            <ul className="nav navbar-right">
-              <GreetingContainer />
-            </ul>
-
-            <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <form className="navbar-form navbar-right" onSubmit={this.handleSearch}>
-                <div className="form-group">
-                  <input type="text"
-                    className="form-control"
-                    onChange={this.onInput}
-                    placeholder="Search"
-                    value={this.state.searchTerm}></input>
-                </div>
-                <button type="submit" className="btn btn-default">Submit</button>
-              </form>
-
-            </div>
-          </div>
-        </nav>
+        <NavContainer />
         <section className="wrapper">
           <ul className="img-grid">
             {stations}
