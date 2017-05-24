@@ -74,6 +74,10 @@ export const findImageUri = (genre) => {
   }
 };
 
+export const generateURI = (cloudinary, imageId) => {
+  return `http://res.cloudinary.com/heab4q3lg/image/upload/h_400/${cloudinary}/${imageId}.jpg`;
+};
+
 const IMAGE_URI_FINDER = {
   'Adult': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143755/rap.jpg"],
   'Alternative': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147286/alternative-2.jpg"],
