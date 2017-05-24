@@ -3,14 +3,13 @@ import { Link, Route } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
 import StationDetail from './station_detail';
 import { findImages } from '../../util/station_util';
-import { receiveURIs } from '../../actions/uri_actions';
-
 
 
 class StationsView extends React.Component {
   constructor(props){
     super(props);
-    this.state = { searchTerm: ''};
+    this.state = { searchTerm: '',
+                    uris: []};
     this.onInput = this.onInput.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
   }
@@ -19,7 +18,6 @@ class StationsView extends React.Component {
     //hide video
     this.props.fetchAllStations();
   }
-
 
   onInput(e){
     e.preventDefault();
@@ -33,10 +31,12 @@ class StationsView extends React.Component {
   }
 
   render(){
-    const imageUris = findImages(this.props.stations);
-    receiveURIs(imageUris);
+    const imageURIs = findImages(this.props.stations);
     const stations = this.props.stations.map((station, idx) => (
-      <StationDetail key={station.id} station={station} uri={imageUris[idx]} />
+      <StationDetail key={station.id}
+        station={station}
+        uri={imageURIs[idx]}
+        idx={idx} />
     ));
 
     return (
@@ -60,7 +60,11 @@ class StationsView extends React.Component {
             <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <form className="navbar-form navbar-right" onSubmit={this.handleSearch}>
                 <div className="form-group">
-                  <input type="text" className="form-control" onChange={this.onInput} placeholder="Search"></input>
+                  <input type="text"
+                    className="form-control"
+                    onChange={this.onInput}
+                    placeholder="Search"
+                    value={this.state.searchTerm}></input>
                 </div>
                 <button type="submit" className="btn btn-default">Submit</button>
               </form>

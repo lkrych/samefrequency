@@ -10,8 +10,7 @@ import uriReducer from './uri_reducer';
   session: sessionReducer,
   stations: stationsReducer,
   stream: streamReducer,
-  chat: chatReducer,
-  uris: uriReducer
+  chat: chatReducer
 });
 
 export default rootReducer;

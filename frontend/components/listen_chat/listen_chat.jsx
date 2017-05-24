@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import GreetingContainer from '../greeting/greeting_container';
 import ChatContainer from '../chat/chat_container';
-import { findImageUri } from '../../util/station_util';
+
 
 class ListenChat extends React.Component {
   constructor(props){
@@ -41,7 +41,7 @@ class ListenChat extends React.Component {
         </nav>
         <div className='listen-chat'>
           <div className='station-info-group'>
-            <img src={findImageUri(this.props.station.genre)}
+            <img src={this.props.uri}
                className="player-img"/>
 
              <div className="station-info">
