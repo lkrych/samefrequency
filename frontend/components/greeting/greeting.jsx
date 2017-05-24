@@ -29,6 +29,7 @@ class Greeting extends React.Component {
 
   editModalClose(){
     this.setState({editModalOpen: false});
+    this.setState({showModalOpen: true});
   }
 
   render(){
@@ -44,19 +45,19 @@ class Greeting extends React.Component {
 
         <Modal
           isOpen={this.state.showModalOpen}
-          onRequestClose={this.onShowModalClose}
+          onRequestClose={this.showModalClose}
           style={style}
           >
-          <button onClick={this.onShowModalClose}>Close</button>
+          <button onClick={this.showModalClose}>Close</button>
         </Modal>
 
 
         <Modal
           isOpen={this.state.editModalOpen}
-          onRequestClose={this.onEditModalClose}
+          onRequestClose={this.editModalClose}
           style={style}
           >
-          <button onClick={this.onEditModalClose}>Close</button>
+          <button onClick={this.editModalClose}>Close</button>
         </Modal>
 
       </section>
