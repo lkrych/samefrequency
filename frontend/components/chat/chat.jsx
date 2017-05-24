@@ -45,6 +45,9 @@ class Chat extends React.Component {
     ));
     return(
       <div className="chat-container">
+        <h4 className="chat-header">
+          Chat about {this.props.station.name}
+        </h4>
         <ul className="chat-list">
           {messages}
         </ul>
