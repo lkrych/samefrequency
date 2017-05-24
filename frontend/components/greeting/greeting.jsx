@@ -41,7 +41,7 @@ class Greeting extends React.Component {
         <button onClick={this.props.logout}
           className ="btn btn-default navbar-btn ">Log out</button>
 
-        //show modal
+
         <Modal
           isOpen={this.state.showModalOpen}
           onRequestClose={this.onShowModalClose}
@@ -50,8 +50,8 @@ class Greeting extends React.Component {
           <button onClick={this.onShowModalClose}>Close</button>
         </Modal>
 
-          //edit modal
-        <Modal>
+
+        <Modal
           isOpen={this.state.editModalOpen}
           onRequestClose={this.onEditModalClose}
           style={style}
