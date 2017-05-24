@@ -70,7 +70,7 @@ export const findImageUri = (genre) => {
     return lodash.sample(IMAGE_URI_FINDER[genre]);
   } else{
     let randomGenre = lodash.sample(genres);
-    return lodash.sample(IMAGE_URI_FINDER[genre]);
+    return lodash.sample(IMAGE_URI_FINDER[randomGenre]);
   }
 };
 
@@ -92,7 +92,7 @@ const IMAGE_URI_FINDER = {
   'Jazz': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147027/jazz-2.jpg"],
   'Latin': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495144172/latin.jpg"],
   'Metal': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143845/metal-2.jpg"],
-  'Middle East': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143784/electronic-3.jpg"],
+  'Middle Eastern': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143784/electronic-3.jpg"],
   'Misc': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147371/misc.jpg"],
   'New Age': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147880/new-age.jpg"],
   'Pop': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143964/pop.jpg"],

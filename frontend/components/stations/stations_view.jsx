@@ -3,6 +3,7 @@ import { Link, Route } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
 import StationDetail from './station_detail';
 import { findImages } from '../../util/station_util';
+import { receiveURIs } from '../../actions/uri_actions';
 
 
 
@@ -33,7 +34,7 @@ class StationsView extends React.Component {
 
   render(){
     const imageUris = findImages(this.props.stations);
-
+    receiveURIs(imageUris);
     const stations = this.props.stations.map((station, idx) => (
       <StationDetail key={station.id} station={station} uri={imageUris[idx]} />
     ));
