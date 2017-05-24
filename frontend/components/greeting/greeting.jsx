@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
+import ShowUser from '../user_profile/show_user';
 import {style} from './style';
 
 class Greeting extends React.Component {
@@ -37,7 +38,7 @@ class Greeting extends React.Component {
       <section>
         <p className="navbar-text navbar-user-info"
           onClick={this.toggleShowModal}>
-          Welcome, {this.props.session.currentUser.email}! </p>
+          Welcome, {this.props.user.email}! </p>
 
         <button onClick={this.props.logout}
           className ="btn btn-default navbar-btn ">Log out</button>
@@ -47,8 +48,10 @@ class Greeting extends React.Component {
           isOpen={this.state.showModalOpen}
           onRequestClose={this.showModalClose}
           style={style}
+          contentLabel="User Modal"
           >
           <button onClick={this.showModalClose}>Close</button>
+          <ShowUser user={this.props.user} />
         </Modal>
 
 
@@ -56,6 +59,7 @@ class Greeting extends React.Component {
           isOpen={this.state.editModalOpen}
           onRequestClose={this.editModalClose}
           style={style}
+          contentLabel="Edit User Modal"
           >
           <button onClick={this.editModalClose}>Close</button>
         </Modal>
