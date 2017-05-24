@@ -75,6 +75,7 @@ export const findImageUri = (genre) => {
 };
 
 const IMAGE_URI_FINDER = {
+  'Adult': ["http://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495143755/rap.jpg"],
   'Alternative': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495147286/alternative-2.jpg"],
   'Blues': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495145109/blues.jpg"],
   'Classical': ["https://res.cloudinary.com/heab4q3lg/image/upload/h_400/v1495148335/classical.jpg"],
