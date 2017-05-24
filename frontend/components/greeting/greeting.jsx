@@ -7,37 +7,58 @@ import {style} from './style';
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { modalOpen: false };
-    this.toggleModal = this.toggleModal.bind(this);
-    this.onModalClose = this.onModalClose.bind(this);
+    this.state = { showModalOpen: false,
+                    editModalOpen: false };
+    this.toggleShowModal = this.toggleShowModal.bind(this);
+    this.showModalClose = this.showModalClose.bind(this);
+    this.toggleEditModal = this.toggleEditModal.bind(this);
+    this.editModalClose = this.editModalClose.bind(this);
   }
 
-  toggleModal(){
-    this.setState({modalOpen: true});
+  toggleShowModal(){
+    this.setState({showModalOpen: true});
   }
 
-  onModalClose(){
-    this.setState({modalOpen: false});
+  showModalClose(){
+    this.setState({showModalOpen: false});
+  }
+
+  toggleEditModal(){
+    this.setState({editModalOpen: true});
+  }
+
+  editModalClose(){
+    this.setState({editModalOpen: false});
   }
 
   render(){
     return (
       <section>
         <p className="navbar-text navbar-user-info"
-          onClick={this.toggleModal}>
+          onClick={this.toggleShowModal}>
           Welcome, {this.props.session.currentUser.email}! </p>
 
         <button onClick={this.props.logout}
           className ="btn btn-default navbar-btn ">Log out</button>
 
+        //show modal
         <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.onModalClose}
+          isOpen={this.state.showModalOpen}
+          onRequestClose={this.onShowModalClose}
           style={style}
           >
-          <button onClick={this.onModalClose}>Close</button>
-          ...content
+          <button onClick={this.onShowModalClose}>Close</button>
         </Modal>
+
+          //edit modal
+        <Modal>
+          isOpen={this.state.editModalOpen}
+          onRequestClose={this.onEditModalClose}
+          style={style}
+          >
+          <button onClick={this.onEditModalClose}>Close</button>
+        </Modal>
+
       </section>
     );
   }
