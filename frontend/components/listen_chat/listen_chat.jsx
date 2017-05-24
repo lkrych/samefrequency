@@ -55,7 +55,7 @@ class ListenChat extends React.Component {
              </div>
 
             <div className="musicPlayer">
-              <audio src={this.props.stream} controls autoplay ></audio>
+              <audio src={this.props.stream} controls autoPlay ></audio>
             </div>
           </div>
           <ChatContainer station={this.props.station}/>
