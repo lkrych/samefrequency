@@ -7,7 +7,12 @@ class Api::StationsController < ApplicationController
   def search
     search_term = URI.encode(params[:searchTerm])
     response = HTTParty.get("http://api.shoutcast.com/legacy/stationsearch?k=#{Figaro.env.SHOUTCAST_KEY}&limit=12&search=#{search_term}")
-    render :json => clean_response(response).to_json
+    clean = clean_response(response)
+    if clean.nil?
+      render :json => ["Sorry! We couldn't find that stream."], status: 404
+    else
+      render :json => clean.to_json
+    end
   end
 
   def stream
@@ -24,7 +29,9 @@ class Api::StationsController < ApplicationController
       else
         stream_uri = uri
       end
+
       render :json => stream_uri.to_json
+
     rescue
       render :json => ["Sorry! We couldn't find that stream."], status: 404
     end
@@ -43,7 +50,7 @@ class Api::StationsController < ApplicationController
       end
       return clean
     rescue
-      render :json => ["Sorry! We couldn't find that stream."], status: 404
+      return nil
     end
   end
 
