@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 
 import ShowUser from '../user_profile/show_user';
+import EditUserForm from '../user_profile/edit_user_form';
 import {style} from './style';
 
 class Greeting extends React.Component {
@@ -26,6 +27,7 @@ class Greeting extends React.Component {
 
   toggleEditModal(){
     this.setState({editModalOpen: true});
+    this.setState({showModalOpen: false });
   }
 
   editModalClose(){
@@ -64,6 +66,9 @@ class Greeting extends React.Component {
           contentLabel="Edit User Modal"
           >
           <button onClick={this.editModalClose}>Close</button>
+            <EditUserForm
+              user={this.props.user}
+           />
         </Modal>
 
       </section>
