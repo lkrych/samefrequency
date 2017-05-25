@@ -19,9 +19,8 @@ class EditUserForm extends React.Component {
     this.setState(
       {
         image_url: this.props.user.image_url,
-        username: this.props.user.username,
+        username: this.props.user.username === null ? '' : this.props.user.username ,
         email: this.props.user.email,
-        icon_active: false
       }
     );
   }
@@ -39,9 +38,8 @@ class EditUserForm extends React.Component {
 
   chooseIcon(e){
     e.preventDefault();
-    console.log(e.target.value);
     this.setState(
-      {image_url : e.target.value }
+      { image_url : e.target.src }
     );
   }
 
@@ -56,10 +54,12 @@ class EditUserForm extends React.Component {
   );
 
     return(
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="edit-user-form">
+        <h2> Edit User Profile</h2>
         <br></br>
 
-        <div class="form-control form-icons">
+        <div className="form-icons">
+          <p>User icons</p>
           {icons}
         </div>
 

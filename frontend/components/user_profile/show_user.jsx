@@ -8,6 +8,7 @@ class ShowUser extends React.Component {
   render(){
     return(
       <div className="show-user-modal">
+        <h2> User Profile</h2>
         <label> Profile Image:
           <img src={this.props.user.image_url}/>
         </label>
