@@ -13,7 +13,7 @@ class ShowUser extends React.Component {
           <img src={this.props.user.image_url}/>
         </label>
         <label> Username:
-          <p>{this.props.user.username === null ? "Not created yet!" : this.props.username}</p>
+          <p>{this.props.user.username === null ? "Not created yet!" : this.props.user.username}</p>
         </label>
         <label> Email:
           <p>{this.props.user.email}</p>

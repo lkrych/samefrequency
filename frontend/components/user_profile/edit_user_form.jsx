@@ -30,6 +30,7 @@ class EditUserForm extends React.Component {
   handleSubmit(e){
     e.preventDefault();
     this.props.processForm(this.state.id, this.state);
+    this.props.editModalClose();
   }
 
   onInput(property){
