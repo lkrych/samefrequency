@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   attr_reader :password
-  
+
   has_many :messages
   has_many :chatrooms, through: :messages
 
@@ -28,6 +28,9 @@ class User < ApplicationRecord
     email = options[:email]
     password = options[:password]
     user = User.find_by(email: email)
+    if user.nil?
+      return nil
+    end
     user.is_password?(password) ? user : nil
   end
 
