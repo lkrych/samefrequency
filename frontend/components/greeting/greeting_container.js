@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { logout } from '../../actions/session_actions';
+import { logout, updateUser } from '../../actions/session_actions';
 import Greeting from './greeting';
 
 const mapStateToProps = (state) => (
@@ -11,7 +11,8 @@ const mapStateToProps = (state) => (
 
 const mapDispatchToProps = (dispatch) => (
   {
-    logout: () => dispatch(logout())
+    logout: () => dispatch(logout()),
+    processForm: (userId, userData) => dispatch(updateUser(userId, userData))
   }
 );
 

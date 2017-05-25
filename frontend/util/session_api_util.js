@@ -6,6 +6,14 @@ export const signup = (user) => (
   })
 );
 
+export const updateUser = (userId, userData) => (
+  $.ajax({
+    method: 'PATCH',
+    url: '/api/users',
+    data: { userData }
+  })
+);
+
 export const login = (user) => (
   $.ajax({
     method: 'POST',
