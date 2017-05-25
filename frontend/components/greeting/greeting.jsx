@@ -52,6 +52,7 @@ class Greeting extends React.Component {
           style={style}
           contentLabel="User Modal"
           >
+          <a className="close" onClick={this.showModalClose}>×</a>
           <ShowUser
             user={this.props.user}
             toggleEditModal={this.toggleEditModal} />
