@@ -21,9 +21,13 @@ class ListenChat extends React.Component {
     if(!this.props.station){
       return <div></div>;
     }
+    const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return(
       <div className="container">
         <NavContainer />
+        <ul className="errorsList">
+          {errors}
+        </ul>
         <Link to="/stations">Back</Link>
         <div className='listen-chat'>
           <div className='station-info-group'>
