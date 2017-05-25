@@ -1,10 +1,11 @@
 import lodash from 'lodash';
 
-export const fetchStationMessages = (stationId) => (
+export const fetchStationMessages = (stationId, chatLength) => (
   $.ajax({
     method: "GET" ,
     url: "/api/chatrooms" ,
-    data: {station_id: stationId}
+    data: {station_id: stationId,
+            chatLength: chatLength}
   })
 );
 

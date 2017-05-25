@@ -13,8 +13,8 @@ const mapStateToProps = state => (
 
 const mapDispatchToProps = dispatch => (
   {
-    showAllMessages: (stationId) => dispatch(
-      showAllMessages(stationId)),
+    showAllMessages: (stationId, chatLength) => dispatch(
+      showAllMessages(stationId, chatLength)),
     receiveMessage: (message) => dispatch(
       receiveMessage(message))
 

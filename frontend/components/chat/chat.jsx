@@ -4,7 +4,8 @@ import MessageDetail from './message_detail';
 class Chat extends React.Component {
   constructor(props){
     super(props);
-    this.state = {message: ''};
+    this.state = {message: '',
+                  chatLength: 10};
     this.onInput = this.onInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,8 +17,16 @@ class Chat extends React.Component {
         this.props.receiveMessage(data);
       }
     });
-    this.props.showAllMessages(this.props.station.id);
+    this.props.showAllMessages(this.props.station.id, this.state.chatLength);
     $('.chat-list').scrollTop($('.chat-list')[0].scrollHeight);
+  }
+
+  componentWillReceiveProps(newProps){
+    if(newProps.user.currentUser.image_url !== this.props.user.currentUser.image_url ||
+      newProps.user.currentUser.username !== this.props.user.currentUser.username ||
+    newProps.user.currentUser.email !== this.props.user.currentUser.email){
+      this.props.showAllMessages(this.props.station.id, this.state.chatLength);
+    }
   }
 
   componentDidUpdate(){
@@ -27,6 +36,7 @@ class Chat extends React.Component {
   componentWillUnmount(){
     window.App.cable.subscriptions.remove(window.App.chatchannel);
   }
+
   onInput(e){
     e.preventDefault();
     this.setState( { message: e.target.value });
@@ -37,7 +47,8 @@ class Chat extends React.Component {
     window.App.chatchannel.send(
       { content: this.state.message, chatroom_id: this.props.station.id,
       user_id: this.props.user.currentUser.id });
-    this.setState( {message: ''});
+    this.setState( {message: '',
+                    chatLength: this.state.chatLength + 1});
   }
   render(){
     const messages = this.props.messages.map(message => (

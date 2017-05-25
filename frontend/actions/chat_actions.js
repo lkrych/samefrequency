@@ -18,8 +18,8 @@ export const receiveMessage = message => (
   }
 );
 
-export const showAllMessages = (stationId) => dispatch => (
-   APIUtil.fetchStationMessages(stationId).then(
+export const showAllMessages = (stationId, chatLength) => dispatch => (
+   APIUtil.fetchStationMessages(stationId, chatLength).then(
     messages => dispatch(receiveMessages(messages)),
     errors => dispatch(receiveErrors(errors.responseJSON)))
 );
