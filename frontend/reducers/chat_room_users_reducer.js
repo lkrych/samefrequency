@@ -1,6 +1,6 @@
 import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/chat_actions';
 import { selectAllMessages} from '../util/chat_util';
-import {merge, keys} from 'lodash/merge';
+import merge from 'lodash/merge';
 
 const parseForUsers = (messages) => {
   const users = {};
@@ -12,7 +12,7 @@ const parseForUsers = (messages) => {
 };
 
 const mergeUsers = (message, state) => {
-  const author = message.map(newMessage => newMessage.author)[0];
+  const author = selectAllMessages(message).map(newMessage => newMessage.author)[0];
   return merge({}, state, { [author.id]: author } );
 };
 

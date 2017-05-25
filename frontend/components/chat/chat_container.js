@@ -7,7 +7,8 @@ import { selectAllMessages } from '../../util/chat_util';
 const mapStateToProps = state => (
   {
     messages: selectAllMessages(state.chat.allMessages),
-    user: state.session
+    user: state.session,
+    members: state.users
   }
 );
 
