@@ -12,7 +12,7 @@ const mapStateToProps = (state) => (
 const mapDispatchToProps = (dispatch) => (
   {
     logout: () => dispatch(logout()),
-    processForm: (userId, userData) => dispatch(updateUser(userId, userData))
+    processForm: (userId, userData) => dispatch(updateUser(userData))
   }
 );
 

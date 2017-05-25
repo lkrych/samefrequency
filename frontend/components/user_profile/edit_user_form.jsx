@@ -8,7 +8,8 @@ class EditUserForm extends React.Component {
     this.state = {
       image_url: '',
       username: '',
-      email: ''
+      email: '',
+      id: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.onInput = this.onInput.bind(this);
@@ -21,13 +22,14 @@ class EditUserForm extends React.Component {
         image_url: this.props.user.image_url,
         username: this.props.user.username === null ? '' : this.props.user.username ,
         email: this.props.user.email,
+        id: this.props.user.id
       }
     );
   }
 
   handleSubmit(e){
     e.preventDefault();
-    this.props.processForm(this.state, this.props.formType);
+    this.props.processForm(this.state);
   }
 
   onInput(property){

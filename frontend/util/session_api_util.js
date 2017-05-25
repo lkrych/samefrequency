@@ -6,11 +6,11 @@ export const signup = (user) => (
   })
 );
 
-export const updateUser = (userId, userData) => (
+export const updateUser = (userData) => (
   $.ajax({
     method: 'PATCH',
     url: '/api/users',
-    data: { userData }
+    data: { user: userData }
   })
 );
 
