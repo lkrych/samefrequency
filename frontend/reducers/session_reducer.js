@@ -1,5 +1,7 @@
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS }
+import { RECEIVE_CURRENT_USER }
   from '../actions/session_actions.js';
+
+import { RECEIVE_ERRORS } from '../actions/error_actions';
 
 import merge from 'lodash/merge';
 
