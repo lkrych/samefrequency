@@ -29,8 +29,8 @@ export const signup = (user) => dispatch => (
     errors => dispatch(receiveErrors(errors.responseJSON)))
 );
 
-export const updateUser = (userData) => dispatch => (
-  APIUtil.updateUser(userData).then(
+export const updateUser = (userId, userData) => dispatch => (
+  APIUtil.updateUser(userId, userData).then(
     newUser => dispatch(receiveCurrentUser(newUser)),
     errors => dispatch(receiveErrors(errors.responseJSON)))
 );

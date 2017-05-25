@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/api/chatrooms', to: 'api/chatrooms#show'
 
   namespace :api, defaults: { format: :json } do
-    resources :users, only: [:create, :show]
+    resources :users, only: [:create, :show, :update]
     resource :session, only: [:create, :destroy]
     resources :stations, only: [:index]
   end

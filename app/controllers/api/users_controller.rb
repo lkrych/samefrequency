@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
     if @user.update(user_params)
       render :show
     else
@@ -25,6 +25,6 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :password, :image_url, :username)
+    params.require(:user).permit(:email, :password, :image_url, :username, :id)
   end
 end

@@ -66,6 +66,7 @@ class Greeting extends React.Component {
           >
             <EditUserForm
               user={this.props.user}
+              processForm={this.props.processForm}
            />
         </Modal>
 

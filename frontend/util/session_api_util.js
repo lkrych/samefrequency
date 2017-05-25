@@ -6,10 +6,10 @@ export const signup = (user) => (
   })
 );
 
-export const updateUser = (userData) => (
+export const updateUser = (userId, userData) => (
   $.ajax({
     method: 'PATCH',
-    url: '/api/users',
+    url: `/api/users/${userId}`,
     data: { user: userData }
   })
 );
