@@ -4,7 +4,7 @@ import {merge, keys} from 'lodash/merge';
 
 const parseForUsers = (messages) => {
   const users = {};
-  const authors = messages.map(message => message.author);
+  const authors = selectAllMessages(messages).map(message => message.author);
   authors.forEach(author => (
     users[author.id] = author
   ));
@@ -13,8 +13,8 @@ const parseForUsers = (messages) => {
 
 const mergeUsers = (message, state) => {
   const author = message.map(newMessage => newMessage.author)[0];
-  return merge({}, state, {author.id : author} );
-}
+  return merge({}, state, { [author.id]: author } );
+};
 
 
 const chatRoomUserReducer = (state = {}, action) => {
@@ -28,3 +28,5 @@ const chatRoomUserReducer = (state = {}, action) => {
       return state;
   }
 };
+
+export default chatRoomUserReducer;
