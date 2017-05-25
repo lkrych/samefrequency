@@ -1,6 +1,6 @@
 export const RECEIVE_STATIONS = "RECEIVE_STATIONS";
 
-import receiveErrors from './error_actions';
+import {receiveErrors} from './error_actions';
 import * as APIUtil from '../util/station_util';
 
 const receiveStations = (stations) => (

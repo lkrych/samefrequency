@@ -1,6 +1,6 @@
 export const RECEIVE_STREAM_URI = "RECEIVE_STREAM_URI";
 
-import receiveErrors from './error_actions';
+import {receiveErrors} from './error_actions';
 import * as APIUtil from '../util/station_util';
 
 
