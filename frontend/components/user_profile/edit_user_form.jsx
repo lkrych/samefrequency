@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {iconChoices} from '../../util/icon_util';
+import {iconChoices, magnifyIcon} from '../../util/icon_util';
 
 class EditUserForm extends React.Component {
   constructor(props){
@@ -38,8 +38,10 @@ class EditUserForm extends React.Component {
 
   chooseIcon(e){
     e.preventDefault();
+    $('img').removeClass('icon-choice-active');
+    $(e.target).toggleClass('icon-choice-active');
     this.setState(
-      { image_url : e.target.src }
+      { image_url : magnifyIcon(e.target.src) }
     );
   }
 

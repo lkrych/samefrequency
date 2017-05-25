@@ -76,12 +76,17 @@ label {
   flex-direction: column;
 
   .icon-choice{
-    border: 1px solid Transparent;
+    border: 2px solid Transparent;
   }
 
   .icon-choice:hover {
     border-color: #5cb3fd;
     cursor: pointer;
+  }
+
+  .icon-choice-active{
+    border-color: #5cb3fd;
+    box-shadow: 5px 5px 5px #888888;
   }
 
 }
