@@ -12,7 +12,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     station: findStation(stationId, state),
     stream: state.stream.streamUri,
-    uri: generateURI(cloudinary, imageId)
+    uri: generateURI(cloudinary, imageId),
+    errors: state.stream.errors
   };
 };
 
