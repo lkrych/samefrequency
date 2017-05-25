@@ -2,7 +2,7 @@ class Api::ChatroomsController < ApplicationController
   def show
     chatroom = Chatroom.find_by(station_id: params[:station_id])
     if chatroom
-      @messages = chatroom.messages.last(10)
+      @messages = chatroom.messages.includes(:user).last(10)
     else
       @messages = []
     end

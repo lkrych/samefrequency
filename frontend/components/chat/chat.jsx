@@ -42,8 +42,7 @@ class Chat extends React.Component {
   render(){
     const messages = this.props.messages.map(message => (
       <MessageDetail key={message.id}
-         message={message}
-          icon={this.props.user.currentUser.image_url}/>
+         message={message}/>
     ));
     return(
       <div className="chat-container">
