@@ -40,7 +40,6 @@ gem 'rails_12factor'
 gem 'httparty'
 gem 'rails_real_favicon'
 gem 'ipaddress'
-gem 'email_validator'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -14,12 +14,20 @@ class Api::StationsController < ApplicationController
     response = HTTParty.get("http://yp.shoutcast.com/sbin/tunein-station.pls?id=#{params[:id].to_i}").parsed_response
     uri = URI.extract(response).first
     matched = /^http:\/\/(?<stream>.*)/.match(uri)
-    if IPAddress.valid? matched["stream"].split(":").first
-      stream_uri = uri + "/;"
-    else
-      stream_uri = uri
+    begin
+      if IPAddress.valid? matched["stream"].split(":").first
+        stream_uri = uri + "/;"
+      elsif uri.include? "mp3"
+        stream_uri = uri
+      elsif matched["stream"].split(":").length > 1
+        stream_uri = uri + "/;"
+      else
+        stream_uri = uri
+      end
+      render :json => stream_uri.to_json
+    rescue
+      render :json => ["Sorry! We couldn't find that stream."], status: 404
     end
-    render :json => stream_uri.to_json
   end
 
   private
@@ -28,11 +36,15 @@ class Api::StationsController < ApplicationController
     clean = {}
     necessary_keys = ["name", "id", "genre"]
     station_info = response.parsed_response["stationlist"]["station"]
-    station_info.each do |station|
-      cleaned = station.select {|key| necessary_keys.include?(key)}
-      clean[cleaned["id"].to_i] = cleaned
+    begin
+      station_info.each do |station|
+        cleaned = station.select {|key| necessary_keys.include?(key)}
+        clean[cleaned["id"].to_i] = cleaned
+      end
+      return clean
+    rescue
+      render :json => ["Sorry! We couldn't find that stream."], status: 404
     end
-    return clean
   end
 
   def stations_params
