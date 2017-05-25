@@ -9,7 +9,7 @@ class Api::StationsController < ApplicationController
     response = HTTParty.get("http://api.shoutcast.com/legacy/stationsearch?k=#{Figaro.env.SHOUTCAST_KEY}&limit=12&search=#{search_term}")
     clean = clean_response(response)
     if clean.nil?
-      render :json => ["Sorry! We couldn't find that stream."], status: 404
+      render :json => ["Sorry! We couldn't any stations that matched #{params[:searchTerm]}."], status: 404
     else
       render :json => clean.to_json
     end

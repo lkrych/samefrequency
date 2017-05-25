@@ -20,6 +20,7 @@ class StationsView extends React.Component {
     this.props.fetchAllStations();
   }
 
+
   onInput(e){
     e.preventDefault();
     this.setState({searchTerm: e.target.value});

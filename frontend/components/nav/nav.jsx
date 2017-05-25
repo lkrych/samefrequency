@@ -19,7 +19,8 @@ class Nav extends React.Component {
     e.preventDefault();
     this.props.searchStations(this.state.searchTerm);
     this.setState({searchTerm: ''});
-    this.props.history.push("/stations"); //redirect on search;
+    this.props.history.push(`/stations`); //redirect on search;
+
   }
 
   render(){
