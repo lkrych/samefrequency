@@ -40,10 +40,13 @@ class StationsView extends React.Component {
         uri={imageURIs[idx]}
         idx={idx} />
     ));
-
+    const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return (
       <div className="container">
         <NavContainer />
+        <ul className="errorsList">
+          {errors}
+        </ul>
         <section className="wrapper">
           <ul className="img-grid">
             {stations}
