@@ -15,5 +15,5 @@ export const magnifyIcon = (imageUri) => (
 );
 
 export const minnifyIcon = (imageUri) => (
-  imageUri.replace("h_64","h_32")
+  imageUri.replace("h_128","h_32")
 );
