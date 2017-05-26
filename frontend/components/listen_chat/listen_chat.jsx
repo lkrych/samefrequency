@@ -25,10 +25,6 @@ class ListenChat extends React.Component {
     return(
       <div className="listen-chat-container">
         <NavContainer />
-        <ul className="errors-list">
-          {errors}
-        </ul>
-        <Link to="/stations">Back</Link>
         <div className='listen-chat'>
           <div className='station-info-group'>
             <img src={this.props.uri}
