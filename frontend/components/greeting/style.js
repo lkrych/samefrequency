@@ -11,8 +11,8 @@ export const style = {
   content : {
     position        : 'fixed',
     top             : '100px',
-    left            : '150px',
-    right           : '150px',
+    left            : '325px',
+    right           : '325px',
     bottom          : '100px',
     border          : '1px solid #ccc',
     padding         : '20px',
