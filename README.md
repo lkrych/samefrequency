@@ -7,17 +7,18 @@ Same Frequency is a loose clone of [plug.dj](https://plug.dj)
 
 ## Minimum Viable Product
 
-Same frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency will be a spin on this application that encourages people to listen to the radio together.
+Same frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency is a spin on this application that encourages people to listen to the radio together.
 
-It will be built using Ruby on rails and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the following criteria with smooth, bug-free navigation, and awesome CSS styling:
+It is built using Ruby on rails and React/Redux.
 
-* Hosting on Heroku
-* New account creation, login, and guest/demo login
+##Features
+
 * Chat
 * Music Streaming
 * Channels
 * User Profiles
-
+* Hosting on Heroku
+* New account creation, login, and guest/demo login
 
 ####Resources used
 <a href='http://www.freepik.com/free-photo/vintage-radio_1011596.htm'>Designed by Freepik</a>
