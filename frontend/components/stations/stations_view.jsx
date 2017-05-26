@@ -40,9 +40,21 @@ class StationsView extends React.Component {
         uri={imageURIs[idx]}
         idx={idx} />
     ));
+    const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+    let errorVid = <div></div>;
+    if (errors.length > 0){
+      errorVid = <video
+        src="https://res.cloudinary.com/heab4q3lg/video/upload/v1495824267/search_not_found.mp4"
+        autoPlay loop>
+      </video>;
+    }
     return (
       <div className="stations-container">
         <NavContainer />
+        <ul className="errors-list">
+          {errors}
+          {errorVid}
+        </ul>
         <section className="wrapper">
           <ul className="img-grid">
             {stations}

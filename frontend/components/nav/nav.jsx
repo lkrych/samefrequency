@@ -24,7 +24,6 @@ class Nav extends React.Component {
   }
 
   render(){
-    const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return(
       <nav className="navbar navbar-default">
         <div className="navbar-container">
@@ -48,9 +47,6 @@ class Nav extends React.Component {
 
               </form>
             </div>
-            <ul className="errors-list">
-              {errors}
-            </ul>
           </div>
 
           <ul className="nav">
