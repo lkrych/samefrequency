@@ -58,9 +58,19 @@ label {
   cursor: pointer;
   margin: 5px;
 }
-
+.greeting-container{
+  display: flex;
+  flex-direction: column;
+}
 .navbar-user-info {
   cursor: pointer;
+  display:flex;
+  flex-direction: column;
+  img {
+    align-items: center;
+    height:32px;
+    width:32px;
+  }
 }
 
 .navbar-user-info:hover {
@@ -94,6 +104,7 @@ label {
   height: 100vh;
 	margin-right: 0;
 	margin-left: 0;
+  background: #F2F5F8;
 }
 
 .navbar-nav,
@@ -110,6 +121,18 @@ label {
 
 .navbar-search {
   padding-left: 0 !important;
+  .search-icon {
+      width: 32px;
+      height: 32px;
+      padding-left: 1px;
+      object-fit: fill;
+      background-color: Transparent;
+      border: none;
+      background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495819283/search-2.png");
+      span {
+        display: none;
+      }
+    }
 }
 
 .edit-user-form{

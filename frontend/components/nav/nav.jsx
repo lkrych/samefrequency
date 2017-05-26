@@ -48,7 +48,7 @@ class Nav extends React.Component {
                   placeholder="Search"
                   value={this.state.searchTerm}></input>
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button className="btn btn-primary search-icon"><span>Send</span></button>
             </form>
 
             <ul className="errors-list">

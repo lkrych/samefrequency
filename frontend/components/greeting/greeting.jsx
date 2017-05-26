@@ -5,6 +5,7 @@ import Modal from 'react-modal';
 import ShowUser from '../user_profile/show_user';
 import EditUserForm from '../user_profile/edit_user_form';
 import {style} from './style';
+import {minnifyIcon} from '../../util/icon_util';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -37,10 +38,12 @@ class Greeting extends React.Component {
 
   render(){
     return (
-      <section>
+      <section className="greeting-container">
         <p className="navbar-text navbar-user-info"
           onClick={this.toggleShowModal}>
-          Welcome, {this.props.user.email}! </p>
+          <img src={minnifyIcon(this.props.user.image_url)}/>
+          {this.props.user.username}
+        </p>
 
         <button onClick={this.props.logout}
           className ="btn btn-default navbar-btn ">Log out</button>
