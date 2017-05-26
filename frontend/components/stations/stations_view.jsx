@@ -42,7 +42,7 @@ class StationsView extends React.Component {
     ));
     const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return (
-      <div className="container">
+      <div className="stations-container">
         <NavContainer />
         <ul className="errorsList">
           {errors}
@@ -52,6 +52,7 @@ class StationsView extends React.Component {
             {stations}
           </ul>
         </section>
+
       </div>
 
     );

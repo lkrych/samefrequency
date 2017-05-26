@@ -34,7 +34,10 @@ class Nav extends React.Component {
               <span className="icon-bar"></span>
               <span className="icon-bar"></span>
             </button>
-            <Link className="navbar-brand" to="/stations">Same Frequency</Link>
+            <Link className="navbar-brand" to="/stations">
+              <img src="https://res.cloudinary.com/heab4q3lg/image/upload/v1495765879/wifi-logo.png" />
+              Same Frequency
+            </Link>
           </div>
 
           <ul className="nav navbar-right">
@@ -42,7 +45,7 @@ class Nav extends React.Component {
           </ul>
 
           <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form className="navbar-form navbar-right" onSubmit={this.handleSearch}>
+            <form className="navbar-form navbar-right navbar-search" onSubmit={this.handleSearch}>
               <div className="form-group">
                 <input type="text"
                   className="form-control"

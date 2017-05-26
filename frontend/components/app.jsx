@@ -9,7 +9,6 @@ import ListenChatContainer from './listen_chat/listen_chat_container';
 const App = () => (
   <div className ="main">
     <AuthRoute exact path="/" component={Splash} />
-
     <ProtectedRoute path="/station/:id/:cloudinary/:imageId" component={ListenChatContainer} />
     <ProtectedRoute path="/stations" component={StationsContainer} />
 
