@@ -68,6 +68,7 @@ class Greeting extends React.Component {
           style={style}
           contentLabel="Edit User Modal"
           >
+          <a className="close" onClick={this.editModalClose}>×</a>
             <EditUserForm
               user={this.props.user}
               processForm={this.props.processForm}
