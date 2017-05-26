@@ -3,11 +3,7 @@
 
 [Same Frequency Live](https://still-taiga-52460.herokuapp.com/#/)
 
-Same Frequency is a loose clone of [plug.dj](https://plug.dj)
-
-## Minimum Viable Product
-
-Same frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency is a spin on this application that encourages people to listen to the radio together.
+Same Frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency is a spin on this application that encourages people to listen to the radio together.
 
 Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and React with Redux framework on the frontend.
 
