@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import GreetingContainer from '../greeting/greeting_container';
+import NavBarInfo from '../navbar-info/navbar-info';
 
 class Nav extends React.Component {
   constructor(props){
@@ -24,7 +25,6 @@ class Nav extends React.Component {
   }
 
   render(){
-    
     return(
       <nav className="navbar navbar-default">
         <div className="navbar-container">
@@ -48,7 +48,7 @@ class Nav extends React.Component {
               </form>
             </div>
             <div className="navbar-steps">
-
+              <NavBarInfo urlParams={this.props.location} />
             </div>
           </div>
 

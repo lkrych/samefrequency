@@ -4,7 +4,7 @@ import Nav from './nav';
 import { searchStations }
   from '../../actions/stations_actions';
 
-const mapStateToProps = state => (
+const mapStateToProps = (state, ownProps) => (
   {
     errors: state.stations.errors
   }
