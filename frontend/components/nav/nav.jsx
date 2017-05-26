@@ -24,6 +24,7 @@ class Nav extends React.Component {
   }
 
   render(){
+    
     return(
       <nav className="navbar navbar-default">
         <div className="navbar-container">
@@ -44,8 +45,10 @@ class Nav extends React.Component {
                     placeholder="Search"
                     value={this.state.searchTerm}></input>
                 </div>
-
               </form>
+            </div>
+            <div className="navbar-steps">
+
             </div>
           </div>
 

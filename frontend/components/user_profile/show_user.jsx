@@ -9,18 +9,12 @@ class ShowUser extends React.Component {
     return(
       <div className="show-user-modal">
         <h2> User Profile</h2>
-        <label> Profile Image:
+        <div className="show-user-info">
           <img src={this.props.user.image_url}/>
-        </label>
-        <label> Username:
-          <p>{this.props.user.username === null || this.props.user.username === '' ?
-             "Not created yet!" : this.props.user.username}</p>
-        </label>
-        <label> Email:
-          <p>{this.props.user.email}</p>
-        </label>
-
-
+          <p>Username: {this.props.user.username === null || this.props.user.username === '' ?
+               "Not created yet!" : this.props.user.username}</p>
+             <p>Email: {this.props.user.email}</p>
+        </div>
         <a onClick={this.props.toggleEditModal}>Edit Profile</a>
       </div>
     );

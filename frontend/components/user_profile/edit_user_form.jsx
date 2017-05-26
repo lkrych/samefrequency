@@ -63,8 +63,8 @@ class EditUserForm extends React.Component {
         <h2> Edit User Profile</h2>
         <br></br>
 
+        <p>User icons</p>
         <div className="form-icons">
-          <p>User icons</p>
           {icons}
         </div>
 

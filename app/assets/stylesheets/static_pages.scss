@@ -161,6 +161,7 @@ label {
 .edit-user-form{
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .icon-choice{
     border: 2px solid Transparent;
@@ -246,6 +247,13 @@ label {
 .show-user-modal{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  h2 {
+    text-align: center;
+  }
+  a:hover {
+    cursor: pointer;
+  }
 }
 .close {
   text-align: right;
