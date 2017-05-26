@@ -4,6 +4,7 @@
 
 h1, h2 {
   font-family: 'Lobster', cursive;
+  margin: 0;
 }
 
 html, body, ul {
@@ -280,6 +281,12 @@ li {
   .message-content{
 
   }
+}
+
+.station-view-logo{
+  padding-left: 250px;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .img-grid {

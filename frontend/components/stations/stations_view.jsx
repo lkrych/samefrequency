@@ -51,6 +51,7 @@ class StationsView extends React.Component {
     return (
       <div className="stations-container">
         <NavContainer />
+        <h1 className="station-view-logo"> Stations </h1>
         <ul className="errors-list">
           {errors}
           {errorVid}
