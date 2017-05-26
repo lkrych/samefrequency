@@ -75,7 +75,7 @@ export const findImageUri = (genre) => {
 };
 
 export const generateURI = (cloudinary, imageId) => {
-  return `http://res.cloudinary.com/heab4q3lg/image/upload/h_400/${cloudinary}/${imageId}.jpg`;
+  return `http://res.cloudinary.com/heab4q3lg/image/upload/h_500/${cloudinary}/${imageId}.jpg`;
 };
 
 const IMAGE_URI_FINDER = {
