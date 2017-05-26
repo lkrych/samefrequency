@@ -7,13 +7,13 @@ h1, h2 {
   margin: 0;
 }
 
-html body, ul, div {
+html, body, ul, div {
   font-family: 'Lato', sans-serif ;
   margin: 0;
 }
 
-html body {
-  font-size: 14px;
+html, body, label, button {
+  font-size: 16px;
 }
 
 ul, li {
@@ -359,10 +359,11 @@ li {
   li {
     display: inline-block;
     overflow: hidden;
-    max-height: 250px;
+    max-height: 275px;
   }
   img {
-    max-width: 440px;
+    width: 500px;
+    height: 300px;
     object-fit: cover;
   }
   .overlay-container {
