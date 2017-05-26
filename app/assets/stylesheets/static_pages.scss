@@ -182,6 +182,8 @@ label {
 .errors-list{
   padding-left: 250px;
   text-align: center;
+  font-weight: bolder;
+  padding-top: 10px;
 }
 
 .listen-chat{
@@ -273,7 +275,15 @@ label {
   filter: alpha(opacity=0);
 }
 
-
+.nothing-found-list {
+  margin-bottom: 40px;
+  font-size: 20px;
+  text-decoration: underline;
+  color: #337AB7;
+}
+.nothing-found-list:hover {
+  cursor: pointer;
+}
 
 // message-detail
 li {

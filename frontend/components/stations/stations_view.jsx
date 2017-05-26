@@ -13,6 +13,7 @@ class StationsView extends React.Component {
                     uris: []};
     this.onInput = this.onInput.bind(this);
     this.handleSearch = this.handleSearch.bind(this);
+    this.fetchStations = this.fetchStations.bind(this);
   }
 
   componentDidMount(){
@@ -32,6 +33,11 @@ class StationsView extends React.Component {
     this.setState({searchTerm: ''});
   }
 
+  fetchStations(e){
+    e.preventDefault();
+    this.props.fetchAllStations();
+  }
+
   render(){
     const imageURIs = findImages(this.props.stations);
     const stations = this.props.stations.map((station, idx) => (
@@ -43,10 +49,16 @@ class StationsView extends React.Component {
     const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     let errorVid = <div></div>;
     if (errors.length > 0){
-      errorVid = <video
-        src="https://res.cloudinary.com/heab4q3lg/video/upload/v1495824267/search_not_found.mp4"
-        autoPlay loop>
-      </video>;
+      errorVid =
+      <div>
+        <li
+          className="nothing-found-list"
+           onClick={this.fetchStations}> Or, Click Here</li>
+        <video
+          src="https://res.cloudinary.com/heab4q3lg/video/upload/v1495824267/search_not_found.mp4"
+          autoPlay loop>
+        </video>
+      </div>;
     }
     return (
       <div className="stations-container">
