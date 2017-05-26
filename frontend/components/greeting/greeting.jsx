@@ -5,7 +5,7 @@ import Modal from 'react-modal';
 import ShowUser from '../user_profile/show_user';
 import EditUserForm from '../user_profile/edit_user_form';
 import {style} from './style';
-import {minnifyIcon} from '../../util/icon_util';
+import {mediumifyIcon} from '../../util/icon_util';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class Greeting extends React.Component {
       <section className="greeting-container">
         <p className="navbar-text navbar-user-info"
           onClick={this.toggleShowModal}>
-          <img src={minnifyIcon(this.props.user.image_url)}/>
+          <img src={mediumifyIcon(this.props.user.image_url)}/>
           {this.props.user.username}
         </p>
 

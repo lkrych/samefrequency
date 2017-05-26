@@ -39,7 +39,7 @@ class Nav extends React.Component {
             <GreetingContainer />
           </ul>
 
-          <div>
+          <div className="navbar-search-container">
             <form className="navbar-form navbar-search" onSubmit={this.handleSearch}>
               <div className="form-group">
                 <input type="text"

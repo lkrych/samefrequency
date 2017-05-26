@@ -17,3 +17,7 @@ export const magnifyIcon = (imageUri) => (
 export const minnifyIcon = (imageUri) => (
   imageUri.replace("h_128","h_32")
 );
+
+export const mediumifyIcon = (imageUri) => (
+  imageUri.replace("h_128","h_64")
+);
