@@ -291,15 +291,15 @@ li {
   padding-left: 250px;
 }
 .wrapper {
-  max-width: 80em;
+  max-width: 90em;
   margin: 0 auto;
   li {
     display: inline-block;
     overflow: hidden;
-    max-height: 200px;
+    max-height: 250px;
   }
   img {
-    max-width: 400px;
+    max-width: 440px;
     object-fit: cover;
   }
   .overlay-container {
