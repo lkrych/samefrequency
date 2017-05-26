@@ -20,6 +20,10 @@ label {
   text-align: left;
 }
 
+.splash-title {
+  margin-top: 20px;
+}
+
 .splash-container {
   display: flex;
   align-content: center;
@@ -281,12 +285,6 @@ li {
   .message-content{
 
   }
-}
-
-.station-view-logo{
-  padding-left: 250px;
-  text-align: center;
-  text-decoration: underline;
 }
 
 .img-grid {

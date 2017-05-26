@@ -12,9 +12,9 @@ export default () => {
          autoPlay loop>
       </video>
       <div id= "splash" className ="splash-modal">
-        <header>
+        <header className="splash-title">
           <h1>Same Frequency</h1>
-          <h2>Radio on the Internet</h2>
+          <h2>Radio Chatrooms</h2>
         </header>
         <AuthRoute path="/" component={SessionFormContainer} />
         <AuthRoute path="/" component={NewUserInfo} />
