@@ -1,7 +1,7 @@
 # Same Frequency
 
 
-[Same Frequency](https://still-taiga-52460.herokuapp.com/#/)
+[Same Frequency Live](https://still-taiga-52460.herokuapp.com/#/)
 
 Same Frequency is a loose clone of [plug.dj](https://plug.dj)
 
@@ -11,15 +11,15 @@ Same frequency is a web application inspired by plug.dj, a web service that enab
 
 Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and React with Redux framework on the frontend.
 
-##Features
+## Features
 
-* Chat
-* Music Streaming
-* Channels
+* Chat - using websockets
+* Music Streaming - using the SHOUTcast API
+* Stations - corresponding to different chatrooms
 * User Profiles
 * Hosting on Heroku
 * New account creation, login, and guest/demo login
 
-####Resources used
+#### Resources used
 <a href='http://www.freepik.com/free-photo/vintage-radio_1011596.htm'>Designed by Freepik</a>
 <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
