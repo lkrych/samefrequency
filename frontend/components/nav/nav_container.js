@@ -4,10 +4,17 @@ import Nav from './nav';
 import { searchStations }
   from '../../actions/stations_actions';
 
-const mapDispatchToProps = dispatch => (
+const mapStateToProps = state => (
   {
-    searchStations: (searchTerm) => dispatch(searchStations(searchTerm))
+    errors: state.stations.errors
   }
 );
 
-export default connect(null,mapDispatchToProps)(Nav);
+const mapDispatchToProps = dispatch => (
+  {
+    searchStations: (searchTerm) => dispatch(searchStations(searchTerm))
+
+  }
+);
+
+export default connect(mapStateToProps,mapDispatchToProps)(Nav);

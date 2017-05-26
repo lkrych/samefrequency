@@ -24,28 +24,23 @@ class Nav extends React.Component {
   }
 
   render(){
+    const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     return(
       <nav className="navbar navbar-default">
-        <div className="container-fluid">
-          <div className="navbar-header">
-            <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span className="sr-only">Toggle navigation</span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
+        <div className="navbar-container">
+          <div className="navbar-brand-container" >
             <Link className="navbar-brand" to="/stations">
               <img src="https://res.cloudinary.com/heab4q3lg/image/upload/v1495765879/wifi-logo.png" />
               Same Frequency
             </Link>
           </div>
 
-          <ul className="nav navbar-right">
+          <ul className="nav">
             <GreetingContainer />
           </ul>
 
-          <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <form className="navbar-form navbar-right navbar-search" onSubmit={this.handleSearch}>
+          <div>
+            <form className="navbar-form navbar-search" onSubmit={this.handleSearch}>
               <div className="form-group">
                 <input type="text"
                   className="form-control"
@@ -55,6 +50,10 @@ class Nav extends React.Component {
               </div>
               <button type="submit" className="btn btn-default">Submit</button>
             </form>
+
+            <ul className="errors-list">
+              {errors}
+            </ul>
 
           </div>
         </div>

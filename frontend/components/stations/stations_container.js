@@ -7,8 +7,7 @@ import { selectAllStations } from '../../reducers/selectors';
 
 const mapStateToProps = state => (
   {
-    stations: selectAllStations(state.stations.allStations),
-    errors: state.stations.errors
+    stations: selectAllStations(state.stations.allStations)
   }
 );
 
