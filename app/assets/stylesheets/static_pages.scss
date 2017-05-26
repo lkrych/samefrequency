@@ -94,6 +94,7 @@ label {
 
 .listen-chat{
   display: flex;
+  justify-content: space-around;
   .station-info-group {
     display: flex;
     flex-direction: column;
@@ -211,7 +212,7 @@ li {
     position: relative;
     &::before {
       content: attr(data-overlay-text);
-      font: 1em/1.5em 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font: 1em/1.5em 'Segoe UI', Verdana, sans-serif;
       position: absolute;
       z-index: 1;
       /*On top of parent*/

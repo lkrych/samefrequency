@@ -43,8 +43,8 @@ class Api::StationsController < ApplicationController
   def clean_response(response)
     clean = {}
     necessary_keys = ["name", "id", "genre"]
-    station_info = response.parsed_response["stationlist"]["station"]
     begin
+    station_info = response.parsed_response["stationlist"]["station"]
       station_info.each do |station|
         cleaned = station.select {|key| necessary_keys.include?(key)}
         clean[cleaned["id"].to_i] = cleaned

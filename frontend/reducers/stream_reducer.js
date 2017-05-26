@@ -13,7 +13,7 @@ const streamReducer = (state = _nullStream, action) => {
     case RECEIVE_STREAM_URI:
       return merge({}, _nullStream, {streamUri: action.uri});
     case RECEIVE_ERRORS:
-      return merge({}, _nullStream, {errors: action.errors});
+      return merge({}, state, {errors: action.errors});
     default:
       return state;
   }
