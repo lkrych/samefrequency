@@ -77,13 +77,27 @@ label {
   color: #5e5e5e;
 }
 
-.navbar-brand {
-  font-family: 'Lobster', cursive;
+
+.navbar-logo-container{
+
+  .navbar-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+  }
+  .navbar-logo-text{
+    font-family: 'Lobster', cursive;
+    color: rgb(119, 119, 119);
+    text-decoration: none;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
 }
 
 .navbar-brand-container {
   display: block;
-  height: 60vh; // hacky fix this
+  height: 80vh;
 }
 .navbar-container {
   display: flex;
@@ -100,7 +114,7 @@ label {
 .navbar
 {
   position: fixed;
-	max-width:250px;
+	width:250px;
   height: 100vh;
 	margin-right: 0;
 	margin-left: 0;
@@ -121,21 +135,17 @@ label {
 
 .navbar-search-container {
   display: flex;
-  flex-direction: column;
 
-  .navbar-search {
-    padding-left: 0 !important;
-    .search-icon {
-        width: 32px;
-        height: 32px;
-        padding-left: 1px;
-        object-fit: fill;
-        background-color: Transparent;
-        border: none;
-        background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495819283/search-2.png");
-        span {
-          display: none;
-        }
+  .search-icon {
+      width: 32px;
+      height: 32px;
+      margin-right: 2px;
+      object-fit: fill;
+      background-color: Transparent;
+      border: none;
+      background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495819283/search-2.png");
+      span {
+        display: none;
       }
     }
 }
@@ -192,7 +202,7 @@ label {
     }
     .chat-list {
       padding-left: 0pt;
-      height: 300px;
+      height: 400px;
       overflow: scroll;
 
     }

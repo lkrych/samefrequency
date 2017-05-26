@@ -29,33 +29,34 @@ class Nav extends React.Component {
       <nav className="navbar navbar-default">
         <div className="navbar-container">
           <div className="navbar-brand-container" >
-            <Link className="navbar-brand" to="/stations">
-              <img src="https://res.cloudinary.com/heab4q3lg/image/upload/v1495765879/wifi-logo.png" />
-              Same Frequency
-            </Link>
+            <div className="navbar-logo-container">
+              <Link className="navbar-logo" to="/stations">
+                <img src="https://res.cloudinary.com/heab4q3lg/image/upload/v1495765879/wifi-logo.png" />
+                <h1 className="navbar-logo-text">Same Frequency</h1>
+              </Link>
+            </div>
+            <div className="navbar-search-container">
+              <button className="btn btn-primary search-icon"><span>Send</span></button>
+              <form className="navbar-search" onSubmit={this.handleSearch}>
+                <div className="form-group">
+                  <input type="text"
+                    className="form-control"
+                    onChange={this.onInput}
+                    placeholder="Search"
+                    value={this.state.searchTerm}></input>
+                </div>
+
+              </form>
+            </div>
+            <ul className="errors-list">
+              {errors}
+            </ul>
           </div>
 
           <ul className="nav">
             <GreetingContainer />
           </ul>
 
-          <div className="navbar-search-container">
-            <form className="navbar-form navbar-search" onSubmit={this.handleSearch}>
-              <div className="form-group">
-                <input type="text"
-                  className="form-control"
-                  onChange={this.onInput}
-                  placeholder="Search"
-                  value={this.state.searchTerm}></input>
-              </div>
-              <button className="btn btn-primary search-icon"><span>Send</span></button>
-            </form>
-
-            <ul className="errors-list">
-              {errors}
-            </ul>
-
-          </div>
         </div>
       </nav>
     );
