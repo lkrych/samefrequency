@@ -1,7 +1,7 @@
 # Same Frequency
 
 
-[Heroku Link](https://still-taiga-52460.herokuapp.com/#/)
+[Same Frequency](https://still-taiga-52460.herokuapp.com/#/)
 
 Same Frequency is a loose clone of [plug.dj](https://plug.dj)
 
