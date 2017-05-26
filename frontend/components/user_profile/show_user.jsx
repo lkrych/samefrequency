@@ -15,7 +15,7 @@ class ShowUser extends React.Component {
                "Not created yet!" : this.props.user.username}</p>
              <p>Email: {this.props.user.email}</p>
         </div>
-        <a onClick={this.props.toggleEditModal}>Edit Profile</a>
+        <button className="btn btn-primary" onClick={this.props.toggleEditModal}>Edit Profile</button>
       </div>
     );
   }
