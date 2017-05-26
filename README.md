@@ -20,13 +20,11 @@ Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and
 
 ### Stations
 
-![Stations]
-(https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/stations.png)
+![Stations](https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/stations.png)
 
 ### Live Chat
 
-![Live Chat]
-(https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/live_chat.png)
+![Live Chat](https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/live_chat.png)
 
 #### Resources used
 <a href='http://www.freepik.com/free-photo/vintage-radio_1011596.htm'>Designed by Freepik</a>
