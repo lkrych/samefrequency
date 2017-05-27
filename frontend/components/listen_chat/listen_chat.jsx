@@ -22,9 +22,25 @@ class ListenChat extends React.Component {
       return <div></div>;
     }
     const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+    let errorVid = <div></div>;
+    if (errors.length > 0){
+      errorVid =
+      <div>
+        <li
+          className="nothing-found-list"
+           onClick={this.fetchStations}> Or, Click Here</li>
+        <video
+          src="https://res.cloudinary.com/heab4q3lg/video/upload/v1495838462/sorry.mp4"
+          autoPlay loop>
+        </video>
+      </div>;
     return(
       <div className="listen-chat-container">
         <NavContainer />
+        <ul className="errors-list">
+          {errors}
+          {errorVid}
+        </ul>
         <div className='listen-chat'>
           <div className='station-info-group'>
             <img src={this.props.uri}
