@@ -120,14 +120,14 @@ label {
 }
 
 #hidden {
-  max-width:250px;
+  max-width:30vw;
   height: 100vh;
   z-index: -1;
 }
 .navbar
 {
   position: fixed;
-	width:250px;
+	width:20vw;
   height: 100vh;
 	margin-right: 0;
 	margin-left: 0;
@@ -213,7 +213,7 @@ label {
 }
 
 .errors-list{
-  padding-left: 250px;
+  padding-left: 20vw;
   text-align: center;
   li {
     padding-top: 20px;
@@ -221,7 +221,7 @@ label {
 }
 
 .listen-chat{
-  padding-left: 250px;
+  padding-left: 20vw;
   padding-right: 25px;
   display: flex;
   justify-content: space-between;
@@ -229,11 +229,12 @@ label {
     display: flex;
     flex-direction: column;
     padding-left: 10px;
-    width: 50vw;
+    width: 40vw;
 
     .player-img {
-      width: 600px;
-      height: 400px;
+      width: 40vw;
+      height: 60vh;
+      padding-right: 10px;
       object-fit: cover;
       border-radius: 5px;
     }
@@ -354,7 +355,7 @@ li {
 }
 
 .img-grid {
-  padding-left: 250px;
+  padding-left: 20vw;
 }
 .wrapper {
   max-width: 90em;
@@ -365,8 +366,8 @@ li {
     max-height: 275px;
   }
   img {
-    width: 500px;
-    height: 300px;
+    width: 38.5vw;
+    height: 38vh;
     object-fit: cover;
   }
   .overlay-container {
