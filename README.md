@@ -5,6 +5,9 @@
 
 Same Frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency is a spin on this application that encourages people to listen to the radio together.
 
+
+![Stations](https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/stations.png)
+
 Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and React with Redux framework on the frontend.
 
 ## Features
@@ -16,18 +19,47 @@ Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and
 * Hosting on Heroku
 * New account creation, login, and guest/demo login
 
-### Deep dive into Features
-
-### Stations
-
-![Stations](https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/stations.png)
-
 ### Live Chat
 
 ![Live Chat](https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/live_chat.png)
 
+When a user chooses a station, a websocket is opened up between their browser and the server. This socket is used to broadcast any messages sent by users that are also listening to the station. 
+
+One of the more interesting problems I ran into while developing Same Frequency is that I needed to figure out a way to display changes to username and profile image during a live chat. I implemented thi feature by normalizing the members of a chatroom in my redux state. Whenever a user changes their info and sends a message, the chat window rerenders with their new information.
+
+```
+import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/chat_actions';
+import { selectAllMessages} from '../util/chat_util';
+import merge from 'lodash/merge';
+
+// parseforusers not shown!
+
+const mergeUsers = (message, state) => {
+  const author = selectAllMessages(message).map(newMessage => newMessage.author)[0];
+  return merge({}, state, { [author.id]: author } );
+};
+
+
+const chatRoomUserReducer = (state = {}, action) => {
+  Object.freeze(state);
+  switch(action.type){
+    case RECEIVE_MESSAGES:
+      return parseForUsers(action.messages);
+    case RECEIVE_MESSAGE:
+      return mergeUsers(action.message, state);
+    default:
+      return state;
+  }
+};
+
+export default chatRoomUserReducer;
+```
+The Chatroom Users Reducer updates state everytime a message is broadcasted through the websocket for the chatroom. It maintains a normalized state by calling the mergeUsers function which updates the information for the user who sent the message through the websocket.
+
 #### Resources used
 <a href='http://www.freepik.com/free-photo/vintage-radio_1011596.htm'>Designed by Freepik</a>
 <div>Icons made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>_"
+
+![Shoutcast logo](https://res.cloudinary.com/heab4q3lg/image/upload/v1496005167/shoutcast.png)
 
 [Stations page frontend design inspiration](https://codepen.io/trungk18/pen/MepYXj)
