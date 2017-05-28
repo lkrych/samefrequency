@@ -1,7 +1,7 @@
 # Same Frequency
 
 
-[Same Frequency Live](https://still-taiga-52460.herokuapp.com/#/)
+[Same Frequency Live](samefrequency.io)
 
 Same Frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency is a spin on this application that encourages people to listen to the radio together.
 
