@@ -5,7 +5,6 @@ import GreetingContainer from '../greeting/greeting_container';
 import ChatContainer from '../chat/chat_container';
 import { findImageUri } from '../../util/station_util';
 import NavContainer from '../nav/nav_container';
-import Errors from '../error/error';
 
 
 class ListenChat extends React.Component {

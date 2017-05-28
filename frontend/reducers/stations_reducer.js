@@ -13,7 +13,7 @@ const stationsReducer = (state = _nullStations, action) => {
     case RECEIVE_STATIONS:
       return merge({}, _nullStations, {allStations: action.stations});
     case RECEIVE_ERRORS:
-      return merge({}, _nullStations, {errors: action.errors});
+      return merge({}, state, {errors: action.errors});
     default:
       return state;
   }
