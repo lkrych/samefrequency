@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import GreetingContainer from '../greeting/greeting_container';
 import ChatContainer from '../chat/chat_container';
@@ -11,7 +11,6 @@ import Errors from '../error/error';
 class ListenChat extends React.Component {
   constructor(props){
     super(props);
-
   }
 
   componentDidMount(){
@@ -24,9 +23,6 @@ class ListenChat extends React.Component {
     if (errors.length > 0){
       errorVid =
       <div>
-        <li
-          className="nothing-found-list"
-           onClick={this.fetchStations}> Click Here to go back to the main page.</li>
         <video
           src="https://res.cloudinary.com/heab4q3lg/video/upload/v1495838462/sorry.mp4"
           autoPlay loop>
@@ -36,7 +32,10 @@ class ListenChat extends React.Component {
       return (
         <div>
           <NavContainer />
-          <Errors errors={errors} errorVid={errorVid} />
+            <ul className="errors-list">
+              {errors}
+              {errorVid}
+            </ul>
         </div>
 
       );
@@ -70,4 +69,4 @@ class ListenChat extends React.Component {
     );
   }
 }
-export default ListenChat;
+export default withRouter(ListenChat);

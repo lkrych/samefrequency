@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import ListenChat from './listen_chat';
 import { findStation, generateURI } from '../../util/station_util';
 import { fetchRadioStream } from '../../actions/stream_actions';
+import { fetchAllStations }
+  from '../../actions/stations_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -19,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => (
   {
-    fetchRadioStream: (id) => dispatch(fetchRadioStream(id))
+    fetchRadioStream: (id) => dispatch(fetchRadioStream(id)),
+    fetchAllStations: () => dispatch(fetchAllStations())
   }
 );
 

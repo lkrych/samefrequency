@@ -64,7 +64,10 @@ class StationsView extends React.Component {
     return (
       <div className="stations-container">
         <NavContainer />
-        <Errors errors={errors} errorVid={errorVid} />
+        <ul className="errors-list">
+          {errors}
+          {errorVid}
+        </ul>
         <section className="wrapper">
           <ul className="img-grid">
             {stations}
