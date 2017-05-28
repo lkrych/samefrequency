@@ -73,7 +73,7 @@ Rails.application.configure do
 
   config.action_cable.url = "wss://still-taiga-52460.herokuapp.com//cable"
   #tell the actioncable server where to accept requests
-  config.action_cable.allowed_request_origins = ['https://still-taiga-52460.herokuapp.com', 'http://still-taiga-52460.herokuapp.com']
+  config.action_cable.allowed_request_origins = ['https://samefrequency.io', 'http://samefrequency.io' , 'https://still-taiga-52460.herokuapp.com', 'http://still-taiga-52460.herokuapp.com']
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
