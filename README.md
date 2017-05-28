@@ -19,9 +19,12 @@ Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and
 * Hosting on Heroku
 * New account creation, login, and guest/demo login
 
-### Live Chat
+### Live Chat and Streaming
 
 ![Live Chat](https://res.cloudinary.com/heab4q3lg/image/upload/v1495840141/live_chat.png)
+
+
+#### Live Chat
 
 When a user chooses a station, a websocket is opened up between their browser and the server. This socket is used to broadcast any messages sent by users that are also listening to the station. 
 
@@ -56,7 +59,7 @@ export default chatRoomUserReducer;
 ```
 The Chatroom Users Reducer updates state everytime a message is broadcasted through the websocket for the chatroom. It maintains a normalized state by calling the mergeUsers function which updates the information for the user who sent the message through the websocket.
 
-### Streaming
+#### Streaming
 
 Streaming from the SHOUTcast API is somewhat of a headache. The main reason being that the primary identifying id for each station changes every day. This means that it is difficult to maintain information about the state of a chatroom for more than 24 hours. One design decision that I had to make was to initiate a recurring job on my server every day to re-initialize chatroom objects and message objects in the Postgres database. 
 
