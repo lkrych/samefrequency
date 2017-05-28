@@ -31,7 +31,7 @@ class Nav extends React.Component {
           <div className="navbar-brand-container" >
             <div className="navbar-logo-container">
               <Link className="navbar-logo" to="/stations">
-                <img src="https://res.cloudinary.com/heab4q3lg/image/upload/v1495765879/wifi-logo.png" />
+                <img src="https://res.cloudinary.com/heab4q3lg/image/upload/v1496008666/wifi-logo-svg.svg" />
                 <h1 className="navbar-logo-text">Same Frequency</h1>
               </Link>
             </div>
