@@ -5,7 +5,9 @@ class Chat extends React.Component {
   constructor(props){
     super(props);
     this.state = {message: '',
-                  chatLength: 10};
+                  chatLength: 10,
+                  self: this.props.user.currentUser === null || this.props.user.currentUser === '' ?
+                  this.props.user.currentUser.email : this.props.user.currentUser.username};
     this.onInput = this.onInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -19,6 +21,11 @@ class Chat extends React.Component {
     });
     this.props.showAllMessages(this.props.station.id, this.state.chatLength);
     $('.chat-list').scrollTop($('.chat-list')[0].scrollHeight);
+    //send message on entrance to room
+    window.App.chatchannel.send(
+      { content: `${this.state.self} has entered the chatroom`,
+       chatroom_id: this.props.station.id,
+      user_id: this.props.user.currentUser.id });
   }
 
   componentWillReceiveProps(newProps){
@@ -34,6 +41,12 @@ class Chat extends React.Component {
   }
 
   componentWillUnmount(){
+    //send message on exit of room
+    window.App.chatchannel.send(
+      { content: `${this.state.self} has left the chatroom`,
+       chatroom_id: this.props.station.id,
+      user_id: this.props.user.currentUser.id });
+
     window.App.cable.subscriptions.remove(window.App.chatchannel);
   }
 
