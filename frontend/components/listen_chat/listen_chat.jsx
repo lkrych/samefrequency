@@ -28,12 +28,13 @@ class ListenChat extends React.Component {
       <div>
         <li
           className="nothing-found-list"
-           onClick={this.fetchStations}> Or, Click Here</li>
+           onClick={this.fetchStations}> Click Here to go back to the main page.</li>
         <video
           src="https://res.cloudinary.com/heab4q3lg/video/upload/v1495838462/sorry.mp4"
           autoPlay loop>
         </video>
       </div>;
+    }
     return(
       <div className="listen-chat-container">
         <NavContainer />

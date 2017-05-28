@@ -199,6 +199,9 @@ label {
   flex-direction: column;
   align-items: center;
 
+  div {
+    margin-bottom: 4vh;
+  }
   .icon-choice{
     border: 2px solid Transparent;
   }
@@ -215,77 +218,6 @@ label {
 
 }
 
-.errors-list{
-  padding-left: 20vw;
-  text-align: center;
-  li {
-    padding-top: 2vh;
-  }
-}
-
-.listen-chat{
-  padding-left: 20vw;
-  padding-right: 25px;
-  display: flex;
-  justify-content: space-between;
-  .station-info-group {
-    display: flex;
-    flex-direction: column;
-    padding-left: 10px;
-    width: 40vw;
-
-    .player-img {
-      width: 40vw;
-      height: 60vh;
-      padding-right: 10px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
-  }
-  .chat-container {
-    display: flex;
-    flex-direction: column;
-    width: 40vw;
-    margin-left: 10px;
-    padding-left: 10px;
-    padding-right: 5px;
-    border: 3px solid black;
-    border-radius: 5px;
-    background: #F2F5F8;
-
-    .chat-header{
-      border-bottom: 2px solid grey;
-    }
-    .chat-list {
-      padding-left: 0pt;
-      height: 500px;
-      overflow: scroll;
-
-    }
-    .form-group {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
-
-      .form-control {
-        width: 90%;
-      }
-      .chat-icon {
-          width: 32px;
-          height: 32px;
-          padding-left: 1px;
-          object-fit: fill;
-          background-color: Transparent;
-          border: none;
-          background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
-          span {
-            display: none;
-          }
-      }
-    }
-  }
-}
-
 .show-user-modal{
   display: flex;
   flex-direction: column;
@@ -294,9 +226,9 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     img {
-      margin-bottom: 20px;
+      margin-bottom: 6vh;
     }
   }
   a:hover {
@@ -304,7 +236,7 @@ label {
   }
   h2 {
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 8vh;
   }
 }
 .close {
@@ -326,7 +258,7 @@ label {
 }
 
 .nothing-found-list {
-  margin-bottom: 40px;
+  margin-bottom: 6vh;
   font-size: 20px;
   text-decoration: underline;
   color: #337AB7;
@@ -334,6 +266,79 @@ label {
 .nothing-found-list:hover {
   cursor: pointer;
 }
+
+.errors-list{
+  padding-left: 20vw;
+  text-align: center;
+  li {
+    padding-top: 2vh;
+  }
+}
+
+.listen-chat{
+  padding-left: 20vw;
+  padding-right: 1vw;
+  display: flex;
+  justify-content: space-between;
+  .station-info-group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 1vw;
+    width: 40vw;
+
+    .player-img {
+      width: 40vw;
+      height: 70vh;
+      padding-right: 1vw;
+      object-fit: cover;
+      border-radius: 5px;
+    }
+  }
+  .chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    margin-left: 1vw;
+    padding-left: 1vw;
+    padding-right: 0.5vw;
+    border: 3px solid black;
+    border-radius: 5px;
+    background: #F2F5F8;
+
+    .chat-header{
+      border-bottom: 2px solid grey;
+    }
+    .chat-list {
+      padding-left: 0pt;
+      height: 75vh;
+      overflow: scroll;
+
+    }
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+
+      .form-control {
+        width: 90%;
+      }
+      .chat-icon {
+          width: 32px;
+          height: 32px;
+          padding-left: 1vw;
+          object-fit: fill;
+          background-color: Transparent;
+          border: none;
+          background-image: url("https://res.cloudinary.com/heab4q3lg/image/upload/v1495578828/up-chevron-button_bojunh.png");
+          span {
+            display: none;
+          }
+      }
+    }
+  }
+}
+
+
 
 // message-detail
 li {
@@ -366,7 +371,7 @@ li {
   li {
     display: inline-block;
     overflow: hidden;
-    max-height: 275px;
+    max-height: 50vh;
   }
   img {
     width: 38.5vw;
