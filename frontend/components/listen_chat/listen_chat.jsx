@@ -36,7 +36,7 @@ class ListenChat extends React.Component {
       return (
         <div>
           <NavContainer />
-          <Errors />
+          <Errors errors={errors} errorVid={errorVid} />
         </div>
 
       );
@@ -46,7 +46,6 @@ class ListenChat extends React.Component {
     return(
       <div className="listen-chat-container">
         <NavContainer />
-        <Errors errors={errors} errorVid={errorVid} />
         <div className='listen-chat'>
           <div className='station-info-group'>
             <img src={this.props.uri}
