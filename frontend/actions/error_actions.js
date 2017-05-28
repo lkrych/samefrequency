@@ -1,8 +1,18 @@
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_STREAM_ERRORS = "RECEIVE_STREAM_ERROR";
+export const RECEIVE_SEARCH_ERRORS = "RECEIVE_SEARCH_ERROR";
 
-export const receiveErrors = errors => (
+
+
+export const receiveStreamErrors = errors => (
   {
-    type: RECEIVE_ERRORS,
+    type: RECEIVE_STREAM_ERRORS,
+    errors
+  }
+);
+
+export const receiveSearchErrors = errors => (
+  {
+    type: RECEIVE_SEARCH_ERRORS,
     errors
   }
 );
