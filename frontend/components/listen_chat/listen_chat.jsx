@@ -5,6 +5,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import ChatContainer from '../chat/chat_container';
 import { findImageUri } from '../../util/station_util';
 import NavContainer from '../nav/nav_container';
+import Errors from '../error/error';
 
 
 class ListenChat extends React.Component {
@@ -18,9 +19,6 @@ class ListenChat extends React.Component {
   }
 
   render(){
-    if(!this.props.station){
-      return <div></div>;
-    }
     const errors = this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
     let errorVid = <div></div>;
     if (errors.length > 0){
@@ -34,14 +32,21 @@ class ListenChat extends React.Component {
           autoPlay loop>
         </video>
       </div>;
+    if(!this.props.station || errors.length > 0 ){
+      return (
+        <div>
+          <NavContainer />
+          <Errors />
+        </div>
+
+      );
+    }
+
     }
     return(
       <div className="listen-chat-container">
         <NavContainer />
-        <ul className="errors-list">
-          {errors}
-          {errorVid}
-        </ul>
+        <Errors errors={errors} errorVid={errorVid} />
         <div className='listen-chat'>
           <div className='station-info-group'>
             <img src={this.props.uri}

@@ -4,6 +4,7 @@ import GreetingContainer from '../greeting/greeting_container';
 import StationDetail from './station_detail';
 import { findImages } from '../../util/station_util';
 import NavContainer from '../nav/nav_container';
+import Errors from '../error/error';
 
 
 class StationsView extends React.Component {
@@ -63,10 +64,7 @@ class StationsView extends React.Component {
     return (
       <div className="stations-container">
         <NavContainer />
-        <ul className="errors-list">
-          {errors}
-          {errorVid}
-        </ul>
+        <Errors errors={errors} errorVid={errorVid} />
         <section className="wrapper">
           <ul className="img-grid">
             {stations}

@@ -17,8 +17,8 @@ class Api::StationsController < ApplicationController
   end
 
   def stream
-    begin
     response = HTTParty.get("http://yp.shoutcast.com/sbin/tunein-station.pls?id=#{params[:id].to_i}").parsed_response
+    begin
     uri = URI.extract(response).first
     matched = /^http:\/\/(?<stream>.*)/.match(uri)
       if IPAddress.valid? matched["stream"].split(":").first
