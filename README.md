@@ -1,7 +1,7 @@
 # Same Frequency
 
 
-[Same Frequency Live](samefrequency.io)
+[Same Frequency Live](http://www.samefrequency.io)
 
 Same Frequency is a web application inspired by plug.dj, a web service that enables people from across the world to groove to music together. Same Frequency is a spin on this application that encourages people to listen to the radio together.
 
@@ -60,7 +60,7 @@ The Chatroom Users Reducer updates state everytime a message is broadcasted thro
 
 Streaming from the SHOUTcast API is somewhat of a headache. The main reason being that the primary identifying id for each station changes every day. This means that it is difficult to maintain information about the state of a chatroom for more than 24 hours. One design decision that I had to make was to initiate a recurring job on my server every day to re-initialize chatroom objects and message objects in the Postgres database. 
 
-Another reason that streaming is a pain is that the streams are served through the API in different formats. This means that I need to parse the streams by type in my StationsController. I used regex and built in URI parser to solve this problem. 
+Another reason that streaming was difficult is that the streams are served through the API in different formats. This means that I need to parse the streams by type in my StationsController. I used regex and built in URI parser to serve the correct stream format. 
 
 ```
   def stream
