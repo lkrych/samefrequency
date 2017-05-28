@@ -15,7 +15,7 @@ const streamReducer = (state = _nullStream, action) => {
     case RECEIVE_ERRORS:
       return merge({}, state, {errors: action.errors});
     default:
-      return state;
+      return _nullStream;
   }
 };
 
