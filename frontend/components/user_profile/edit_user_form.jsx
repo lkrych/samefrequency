@@ -77,15 +77,7 @@ class EditUserForm extends React.Component {
             </input>
           </label>
         </div>
-        <div className="form-group">
-          <label> Your email:
-            <input type='text'
-              className="form-control"
-              onChange={this.onInput('email')}
-              value={this.state.email}>
-            </input>
-          </label>
-        </div>
+        
 
         <button className="btn btn-primary">Save Edit</button>
         <span></span>
