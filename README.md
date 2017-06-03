@@ -26,11 +26,11 @@ Same Frequency utilizes Ruby on Rails on the backend, a PostgreSQL database, and
 
 #### Live Chat
 
-When a user chooses a station, a websocket is opened up between their browser and the server. This socket is used to broadcast any messages sent by users that are also listening to the station. 
+When a user chooses a station, a websocket is opened up between their browser and the server. This socket is used to broadcast any messages sent by users that are also listening to the station.
 
 One of the more interesting problems I ran into while developing Same Frequency is that I needed to figure out a way to display changes to username and profile image during a live chat. I implemented this feature by normalizing the members of a chatroom in my redux state. Whenever a user changes their info and sends a message, the chat window rerenders with their new information.
 
-```
+``` JavaScript
 import { RECEIVE_MESSAGES, RECEIVE_MESSAGE } from '../actions/chat_actions';
 import { selectAllMessages} from '../util/chat_util';
 import merge from 'lodash/merge';
@@ -61,11 +61,11 @@ The Chatroom Users Reducer updates state everytime a message is broadcasted thro
 
 #### Streaming
 
-Streaming from the SHOUTcast API is somewhat of a headache. The main reason being that the primary identifying id for each station changes every day. This means that it is difficult to maintain information about the state of a chatroom for more than 24 hours. One design decision that I had to make was to initiate a recurring job on my server every day to re-initialize chatroom objects and message objects in the Postgres database. 
+Streaming from the SHOUTcast API is somewhat of a headache. The main reason being that the primary identifying id for each station changes every day. This means that it is difficult to maintain information about the state of a chatroom for more than 24 hours. One design decision that I had to make was to initiate a recurring job on my server every day to re-initialize chatroom objects and message objects in the Postgres database.
 
-Another reason that streaming was difficult is that the streams are served through the API in different formats. This means that I need to parse the streams by type in my StationsController. I used regex and built in URI parser to serve the correct stream format. 
+Another reason that streaming was difficult is that the streams are served through the API in different formats. This means that I need to parse the streams by type in my StationsController. I used regex and built in URI parser to serve the correct stream format.
 
-```
+``` Ruby
   def stream
     response = HTTParty.get("http://yp.shoutcast.com/sbin/tunein-station.pls?id=#{params[:id].to_i}").parsed_response
     begin
